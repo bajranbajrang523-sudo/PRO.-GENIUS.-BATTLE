@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRO GENIUS BATTLE</title>
+  <meta name="description" content="Download PRO GENIUS BATTLE and start playing!">
+</head>
+<body style="font-family:Arial;text-align:center;padding:40px 15px;background:#111;color:white">
+  <h1>PRO GENIUS BATTLE</h1>
+  <p>Welcome to the official game website!</p>
+  <p>Download the game and start playing.</p>
+
+  <a href="game.apk" download
+     style="display:inline-block;padding:15px 25px;background:#218838;color:white;text-decoration:none;border-radius:8px;font-weight:bold">
+    DOWNLOAD GAME
+  </a>
+</body>
+</html>
