@@ -1,0 +1,32 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRO GENIUS BATTLE</title>
+<style>
+body{font-family:Arial,sans-serif;text-align:center;background:#101827;color:white;padding:30px 15px}
+h1{color:#38bdf8}
+button{padding:15px 22px;margin:10px;border:0;border-radius:10px;font-size:17px;font-weight:bold;cursor:pointer}
+.play{background:#22c55e;color:white}
+.install{background:#38bdf8;color:#07111f}
+</style>
+</head>
+<body>
+<h1>PRO GENIUS BATTLE</h1>
+<p>Welcome to the official game website!</p>
+<button class="play" onclick="alert('Your game is ready to be added here!')">PLAY NOW</button>
+<br>
+<button class="install" onclick="downloadPage()">DOWNLOAD WEBSITE</button>
+<script>
+function downloadPage(){
+ const page='<!DOCTYPE html>'+document.documentElement.outerHTML;
+ const blob=new Blob([page],{type:'text/html'});
+ const link=document.createElement('a');
+ link.href=URL.createObjectURL(blob);
+ link.download='PRO-GENIUS-BATTLE.html';
+ link.click();
+ URL.revokeObjectURL(link.href);
+}
+</script>
+</body>
+</html>
