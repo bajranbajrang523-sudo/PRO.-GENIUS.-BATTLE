@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>PRO GENIUS BATTLE</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <style>
+    body {
+      margin: 0;
+      padding: 60px 18px;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #101827;
+      color: white;
+    }
+    h1 { color: #38bdf8; font-size: 38px; }
+    p { font-size: 19px; }
+    button {
+      display: block;
+      margin: 24px auto;
+      padding: 18px 25px;
+      width: min(100%, 360px);
+      border: 0;
+      border-radius: 14px;
+      font-size: 19px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .play { background: #22c55e; color: white; }
+    .install { background: #38bdf8; color: #101827; }
+    #status { font-size: 15px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <h1>PRO GENIUS BATTLE</h1>
+  <p>Welcome to the official game website!</p>
+
+  <button class="play" onclick="alert('Add your actual game here to enable gameplay.')">
+    PLAY NOW
+  </button>
+
+  <button class="install" id="installButton">
+    INSTALL APP
+  </button>
+
+  <p id="status">Install PRO GENIUS BATTLE on your phone.</p>
+
+  <script>
+    let installPrompt = null;
+    const installButton = document.getElementById("installButton");
+    const statusText = document.getElementById("status");
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js")
+          .catch(() => {
+            statusText.textContent =
+              "App setup could not finish. Refresh and try again.";
+          });
+      });
+    }
+
+    window.addEventListener("beforeinstallprompt", event => {
+      event.preventDefault();
+      installPrompt = event;
+      installButton.textContent = "INSTALL APP";
+    });
+
+    installButton.addEventListener("click", async () => {
+      if (installPrompt) {
+        installPrompt.prompt();
+        const result = await installPrompt.userChoice;
+        statusText.textContent =
+          result.outcome === "accepted"
+            ? "Installation accepted!"
+            : "Installation cancelled.";
+        installPrompt = null;
+      } else {
+        statusText.textContent =
+          "In Chrome, tap the three dots ⋮ and choose Install app or Add to Home screen.";
+      }
+      installButton.textContent = "INSTALL APP";
+    });
+
+    window.addEventListener("appinstalled", () => {
+      statusText.textContent = "PRO GENIUS BATTLE has been installed!";
+      installButton.hidden = true;
+    });
+  </script>
+</body>
+</html>
