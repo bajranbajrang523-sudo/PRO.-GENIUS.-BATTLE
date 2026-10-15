@@ -1,32 +1,91 @@
-<!DOCTYPE html><html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PRO GENIUS BATTLE</title>
-<style>
-body{font-family:Arial,sans-serif;text-align:center;background:#101827;color:white;padding:30px 15px}
-h1{color:#38bdf8}
-button{padding:15px 22px;margin:10px;border:0;border-radius:10px;font-size:17px;font-weight:bold;cursor:pointer}
-.play{background:#22c55e;color:white}
-.install{background:#38bdf8;color:#07111f}
-</style>
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <title>PRO GENIUS BATTLE</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #101827;
+      color: #f8fafc;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+    main {
+      width: 100%;
+      padding: 105px 20px 40px;
+    }
+    h1 {
+      color: #38bdf8;
+      font-size: clamp(30px, 7vw, 48px);
+      line-height: 1.15;
+      margin: 0 0 44px;
+      font-weight: 800;
+    }
+    .welcome {
+      font-size: clamp(18px, 4.5vw, 29px);
+      margin: 0 0 50px;
+    }
+    a, button {
+      display: block;
+      border: 0;
+      border-radius: 19px;
+      padding: 27px 22px;
+      width: min(100%, 402px);
+      margin: 0 auto 36px;
+      font-size: clamp(20px, 4.8vw, 30px);
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .play {
+      background: #20c565;
+      color: white;
+      width: min(100%, 245px);
+      padding: 27px 18px;
+    }
+    .download {
+      background: #38bdf8;
+      color: #071426;
+    }
+    @media (max-width: 480px) {
+      main { padding-top: 112px; }
+      h1 { margin-bottom: 46px; }
+      .welcome { margin-bottom: 50px; }
+    }
+  </style>
 </head>
 <body>
-<h1>PRO GENIUS BATTLE</h1>
-<p>Welcome to the official game website!</p>
-<button class="play" onclick="alert('Your game is ready to be added here!')">PLAY NOW</button>
-<br>
-<button class="install" onclick="downloadPage()">DOWNLOAD WEBSITE</button>
-<script>
-function downloadPage(){
- const page='<!DOCTYPE html>'+document.documentElement.outerHTML;
- const blob=new Blob([page],{type:'text/html'});
- const link=document.createElement('a');
- link.href=URL.createObjectURL(blob);
- link.download='PRO-GENIUS-BATTLE.html';
- link.click();
- URL.revokeObjectURL(link.href);
-}
-</script>
-</body>
-</html>
+  <main>
+    <h1>PRO GENIUS BATTLE</h1>
+    <p class="welcome">Welcome to the official game website!</p>
+    <button class="play" id="playButton">PLAY NOW</button>
+    <button class="download" id="downloadButton">DOWNLOAD WEBSITE</button>
+  </main>
+
+  <script>
+    document.getElementById("playButton").addEventListener("click", function () {
+      alert("Your game is ready to be added here!");
+    });
+
+    document.getElementById("downloadButton").addEventListener("click", function () {
+      const html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+      const blob = new Blob([html], { type: "text/html;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "index.html";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+
+
+</body></html>
