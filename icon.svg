@@ -1,7 +1,0 @@
-
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="100" fill="#101827"/>
-  <path d="M256 60 L430 155 L430 355 L256 452 L82 355 L82 155 Z" fill="#38bdf8"/>
-  <text x="256" y="240" font-size="100" font-family="Arial" font-weight="bold" text-anchor="middle" fill="#101827">PRO</text>
-  <text x="256" y="330" font-size="62" font-family="Arial" font-weight="bold" text-anchor="middle" fill="#101827">BATTLE</text>
-</svg>
