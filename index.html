@@ -1,193 +1,2227 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1117"><title>Free Fight Tournaments — Pro Esports Arena</title>
-<style>
-:root{--bg:#0b1117;--panel:#121e28;--line:#2b3c49;--text:#f4f7fa;--muted:#a1b0bd;--lime:#b9ff36;--red:#ff676d;--gold:#ffcf5c}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#1b2b37,var(--bg) 60%);color:var(--text);font:15px/1.5 system-ui,Arial,sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}.wrap{width:min(1180px,94%);margin:auto}.top{position:sticky;top:0;z-index:5;background:#0b1117ed;border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;flex-wrap:wrap}.brand{display:flex;align-items:center;gap:9px;font-weight:950;line-height:1;text-decoration:none;color:var(--text)}.mark{background:var(--lime);color:#111;width:39px;height:39px;border-radius:10px;display:grid;place-items:center;font-weight:900}.brand small{display:block;color:var(--lime);font-size:11px;letter-spacing:1px;margin-top:4px}.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.space{justify-content:space-between}.btn{border:1px solid transparent;border-radius:10px;padding:10px 14px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:all .2s}.btn:hover{filter:brightness(1.1)}.primary{background:var(--lime);color:#111}.secondary{background:#192833;border-color:var(--line);color:var(--text)}.danger{background:#3b2025;border-color:#6b373d;color:#ffdadd}.small{padding:6px 9px;font-size:12px}.muted{color:var(--muted)}.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:25px;align-items:center;padding:48px 0 28px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--lime);font-weight:900;text-transform:uppercase}.hero h1{font-size:clamp(38px,6vw,68px);line-height:1;letter-spacing:-2px;margin:12px 0}.hero h1 span{color:var(--lime)}.hero p{color:var(--muted);font-size:17px}.art{min-height:235px;border:1px solid #344a58;border-radius:22px;padding:24px;background:linear-gradient(145deg,#2a414e,#111a22 70%);display:flex;flex-direction:column;justify-content:space-between}.art strong{font-size:clamp(42px,6vw,65px);line-height:1;color:var(--lime);letter-spacing:-4px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:12px auto 30px}.stat,.panel,.card{background:#111b24;border:1px solid var(--line);border-radius:15px}.stat{padding:14px}.stat strong{display:block;color:var(--lime);font-size:22px}.stat span{color:var(--muted);font-size:12px}.section{padding:22px 0 40px;scroll-margin-top:85px}.head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin-bottom:17px}.section h2{font-size:clamp(25px,4vw,35px);margin:4px 0}.filters,.tabs{display:flex;gap:6px;flex-wrap:wrap}.filter,.tab{background:#192833;border:1px solid var(--line);color:var(--muted);padding:8px 12px;border-radius:20px}.filter.active,.tab.active{background:var(--lime);color:#111;border-color:var(--lime)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{overflow:hidden}.banner{height:125px;background:linear-gradient(135deg,#284351,#151f28);background-size:cover;background-position:center;display:flex;align-items:end;justify-content:space-between;padding:14px}.pill{display:inline-block;background:var(--lime);color:#111;padding:4px 8px;border-radius:7px;font-size:10px;font-weight:950}.gold{background:var(--gold);color:#111}.redpill{background:#48282b;color:#ffd8da}.body{padding:16px}.body h3{font-size:20px;margin:0 0 4px}.body p{color:var(--muted);font-size:13px;margin:0}.meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 0}.meta small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase}.meta b{font-size:14px}.body .btn{width:100%}.panel{padding:18px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.full{grid-column:1/-1}label{display:block;color:var(--muted);font-size:12px;font-weight:750;margin-bottom:5px}input,select,textarea{width:100%;padding:11px;border-radius:9px;border:1px solid #344855;background:#0a131a;color:var(--text)}input[type=file]{font-size:12px;padding:8px}.notice{font-size:12px;color:var(--muted);margin:12px 0}.layout{display:grid;grid-template-columns:1fr 1fr;gap:14px}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;min-width:570px;background:#101a22}th,td{text-align:left;padding:11px;border-bottom:1px solid var(--line);font-size:13px}th{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--muted)}.rank{color:var(--lime);font-weight:900}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:25;background:var(--lime);color:#111;padding:12px 17px;border-radius:11px;font-weight:800;display:none;max-width:92%;box-shadow:0 10px 40px #0008}.chip{border:1px solid var(--line);background:#192833;padding:7px 10px;border-radius:9px;font-size:12px}.chip b{color:var(--lime)}.preview{width:76px;height:52px;object-fit:cover;border-radius:7px}.hr{height:1px;background:var(--line);margin:16px 0}.auth{max-width:650px;margin:25px auto}.footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:12px}
-@media(max-width:820px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.cards{grid-template-columns:1fr}.hero{padding-top:30px}.hero h1{letter-spacing:-1px}.stats{grid-template-columns:1fr}.head{align-items:start;flex-direction:column}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.nav{align-items:flex-start}}
-</style></head><body>
-<header class="top"><div class="wrap nav"><a class="brand" href="#home"><span class="mark">FF</span><span>FREE FIGHT<small>TOURNAMENTS</small></span></a><nav class="row"><a class="btn secondary small" href="#matches">Matches</a><a class="btn secondary small" href="#squads">Squads</a><a class="btn secondary small" href="#leaderboard">Leaderboard</a><a class="btn secondary small" href="#wallet">Wallet</a><button class="btn secondary small" onclick="go('design')">🎨 Theme</button></nav><div id="accountNav"><button class="btn primary" onclick="auth('login')">Login / Register</button></div></div></header>
-<main>
-<section class="wrap hero" id="home"><div><div class="eyebrow">Pakistan • Elite Esports Platform</div><h1>ENTER THE ARENA.<br><span>DOMINATE FREE FIRE.</span></h1><p>Compete in professional Solo, Duo, and Squad skill matches. Instant wallet updates, automated room credentials, and verified leaderboards.</p><div class="row"><a class="btn primary" href="#matches">Explore Tournaments ↗</a><button class="btn secondary" onclick="auth('register')">Create Player Account</button></div><p class="notice">⚡ Pro Feature: Custom room IDs & passwords display inside your joined matches card when countdown triggers.</p></div><div class="art"><div class="eyebrow">Season 02 • Battle Royale</div><strong>BOOYAH!</strong><div><b>PLAY SMART. FIGHT HARD.</b><div class="muted">SOLO • DUO • SQUAD TOURNAMENTS</div></div></div></section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>ABDULLAH BAJRAN - Free Fire Esports Portal</title>
+  <meta name="description" content="Free Fire Esports Tournament Portal - Join daily Solo, Duo, Squad tournaments with EasyPaisa, JazzCash, Room ID & Passwords." />
+  <style>
+    :root {
+      --bg-dark: #0a0e17;
+      --bg-card: #121927;
+      --bg-card-hover: #192236;
+      --bg-input: #1a2234;
+      --primary: #ff9900;
+      --primary-glow: rgba(255, 153, 0, 0.4);
+      --accent-red: #ff334b;
+      --accent-cyan: #00e5ff;
+      --accent-green: #00e676;
+      --text-main: #f0f4fc;
+      --text-muted: #8b9bb4;
+      --border-color: #26334d;
+      --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
 
-<section class="wrap stats">
-  <div class="stat"><strong id="countMatches">0</strong><span>Tournaments</span></div>
-  <div class="stat"><strong id="countPlayers">0</strong><span>Active Players</span></div>
-  <div class="stat"><strong id="countSquads">0</strong><span>Registered Squads</span></div>
-  <div class="stat"><strong>LIVE</strong><span>Server Status</span></div>
-</section>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-<section class="wrap section" id="matches"><div class="head"><div><div class="eyebrow">Choose your battle</div><h2>Ongoing & Upcoming Matches</h2><div class="muted">Select a tournament to view room details or join.</div></div><div class="filters"><button class="filter active" data-filter="All">All</button><button class="filter" data-filter="Ongoing">Ongoing</button><button class="filter" data-filter="Upcoming">Upcoming</button><button class="filter" data-filter="Completed">Completed</button></div></div><div class="cards" id="matchCards"></div></section>
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-family);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
 
-<section class="wrap section hidden" id="squads"><div class="head"><div><div class="eyebrow">Team up</div><h2>Squad Hub</h2><div class="muted">Create or join competitive squads for Duo & Squad tournaments.</div></div></div>
-<div class="layout">
-  <div class="panel"><h3>Create New Squad</h3><form id="squadForm" class="formgrid"><div class="full"><label>Squad Name *</label><input name="name" required placeholder="Team Titans"></div><div class="full"><label>Tag (e.g. [TTN]) *</label><input name="tag" required placeholder="[TTN]"></div><button class="btn primary full">Create Squad</button></form></div>
-  <div class="panel"><h3>Active Squads</h3><div id="squadList"></div></div>
-</div></section>
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary);
+    }
 
-<section class="wrap section" id="leaderboard"><div class="head"><div><div class="eyebrow">Top performers</div><h2>Leaderboard Standings</h2><div class="muted">Verified tournament results & kill points.</div></div></div><div class="tablewrap"><table><thead><tr><th>Rank</th><th>Player</th><th>Free Fire UID</th><th>Mode</th><th>Kills</th><th>Points</th></tr></thead><tbody id="leaderRows"></tbody></table></div></section>
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-upcoming { background: rgba(0, 229, 255, 0.15); color: var(--accent-cyan); border: 1px solid rgba(0, 229, 255, 0.4); }
+    .badge-live { background: rgba(255, 51, 75, 0.2); color: var(--accent-red); border: 1px solid var(--accent-red); animation: pulse 1.5s infinite; }
+    .badge-completed { background: rgba(139, 155, 180, 0.2); color: var(--text-muted); border: 1px solid var(--border-color); }
+    .badge-admin { background: linear-gradient(135deg, #ff9900, #ff334b); color: #fff; font-size: 10px; padding: 2px 6px; }
 
-<section class="wrap section hidden" id="wallet"><div class="head"><div><div class="eyebrow">Player account</div><h2>Wallet & Transactions</h2><div class="muted">Easypaisa, JazzCash, NayaPay & Sadapay simulation.</div></div></div><div id="walletContent"></div></section>
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.02); }
+    }
 
-<section class="wrap section hidden" id="profile"><div class="head"><div><div class="eyebrow">Your account</div><h2>Player Profile</h2></div></div><div id="profileContent"></div></section>
+    header {
+      background: rgba(18, 25, 39, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-<section class="wrap section hidden" id="more"><div class="head"><div><div class="eyebrow">Account menu</div><h2>More Options</h2></div></div><div class="panel row"><a class="btn secondary" href="#wallet">Deposit Coins</a><a class="btn secondary" href="#wallet">Withdraw Earnings</a><a class="btn secondary" href="#squads">Squad Hub</a><a class="btn secondary" href="#profile">Profile Settings</a><button class="btn secondary" onclick="go('design')">🎨 Theme Customizer</button><button class="btn danger" onclick="logout()">Log out</button></div></section>
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
 
-<section class="wrap section hidden" id="design"><div class="head"><div><div class="eyebrow">Personalize layout</div><h2>Theme Customizer</h2><div class="muted">Customize accent colors and UI branding instantly.</div></div></div><div class="panel formgrid">
-<div><label>Accent Color Theme</label><select id="themeAccent" onchange="changeTheme(this.value)"><option value="#b9ff36">Neon Lime (Default)</option><option value="#38ef7d">Cyber Green</option><option value="#00f2fe">Electric Cyan</option><option value="#ff416c">Aggressive Red</option><option value="#f7971e">Golden Orange</option></select></div>
-<div><label>Font Styling</label><select id="themeFont" onchange="changeFont(this.value)"><option value="system-ui,Arial,sans-serif">Clean System UI</option><option value="'Courier New',Courier,monospace">Retro Monospace</option><option value="Georgia,serif">Classic Serif</option></select></div>
-<div class="full"><button class="btn primary" onclick="toast('Theme preferences saved!')">Apply Changes</button></div>
-</div></section>
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ff9900 0%, #ff334b 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+    .brand-logo svg {
+      width: 22px;
+      height: 22px;
+      fill: #fff;
+    }
 
-<section class="wrap section hidden" id="admin"><div class="head"><div><div class="eyebrow">Restricted area</div><h2>Admin Control Panel</h2><div class="muted">Manage custom rooms, user balances, payment verifications and match results.</div></div><span class="pill">ADMIN</span></div>
-<div class="tabs" id="adminTabs"><button class="tab active" data-tab="matchesAdmin">Tournaments</button><button class="tab" data-tab="photosAdmin">Banners</button><button class="tab" data-tab="playersAdmin">Players & Roles</button><button class="tab" data-tab="paymentsAdmin">Payments</button><button class="tab" data-tab="resultsAdmin">Results</button></div>
-<div id="matchesAdmin" class="adminpanel panel" style="margin-top:12px"><h3>Create Tournament</h3><form id="matchForm" class="formgrid"><div><label>Match name *</label><input name="name" required placeholder="Bermuda Solo Championship"></div><div><label>Mode</label><select name="mode"><option>Solo</option><option>Duo</option><option>Squad</option></select></div><div><label>Entry fee (Coins)</label><input name="fee" type="number" min="0" value="50" required></div><div><label>Prize pool (Coins)</label><input name="prize" type="number" min="0" value="1000" required></div><div><label>Slots</label><input name="slots" type="number" min="1" value="48" required></div><div><label>Status</label><select name="status"><option>Upcoming</option><option>Ongoing</option><option>Completed</option></select></div><div><label>Date / time</label><input name="date" type="datetime-local"></div><div><label>Room ID & Password (Secret)</label><input name="room" placeholder="ID: 987654 | Pass: ff123"></div><div class="full"><label>Description</label><textarea name="description" rows="2">Map: Bermuda. Standard competitive rules apply.</textarea></div><button class="btn primary full">Publish Tournament</button></form><div class="hr"></div><h3>Manage Tournaments</h3><div id="adminMatchList"></div></div>
-<div id="photosAdmin" class="adminpanel panel hidden" style="margin-top:12px"><h3>Homepage Banners (up to 5)</h3><form id="photoForm" class="formgrid"><div><label>Title</label><input name="title" required></div><div><label>Image file</label><input name="image" type="file" accept="image/*" required></div><div class="full"><label>Subtitle</label><input name="subtitle"></div><button class="btn primary full">Upload Banner</button></form><div class="hr"></div><div id="photoList"></div></div>
-<div id="playersAdmin" class="adminpanel panel hidden" style="margin-top:12px"><h3>Players & Roles Management</h3><div id="playerList"></div></div>
-<div id="paymentsAdmin" class="adminpanel panel hidden" style="margin-top:12px"><h3>Payment & Withdrawal Requests</h3><div id="paymentList"></div></div>
-<div id="resultsAdmin" class="adminpanel panel hidden" style="margin-top:12px"><h3>Post Leaderboard Scores</h3><form id="resultForm" class="formgrid"><div><label>Player</label><select name="player" id="resultPlayer" required></select></div><div><label>Mode</label><select name="mode"><option>Solo</option><option>Duo</option><option>Squad</option></select></div><div><label>Kills</label><input name="kills" type="number" min="0" value="0" required></div><div><label>Points</label><input name="points" type="number" min="0" value="0" required></div><button class="btn primary full">Save Score</button></form><div class="hr"></div><div id="resultAdminList"></div></div>
-</section>
+    .brand-text h1 {
+      font-size: 16px;
+      line-height: 1.1;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .brand-text p {
+      font-size: 10px;
+      color: var(--primary);
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
 
-<section class="wrap section" id="authSection"><div class="panel auth"><div class="eyebrow">Account access</div><h2 id="authTitle">Login</h2><div class="muted">Access your tournament dashboard or register a new player profile.</div><div class="tabs" style="margin:15px 0"><button class="tab active" data-auth="login">Login</button><button class="tab" data-auth="register">Player Registration</button><button class="tab" data-auth="setup">Initial Admin Setup</button></div>
-<form id="loginForm" class="formgrid"><div class="full"><label>Email</label><input name="email" type="email" required autocomplete="username"></div><div class="full"><label>Password</label><input name="password" type="password" required autocomplete="current-password"></div><button class="btn primary full">Login</button></form>
-<form id="registerForm" class="formgrid hidden"><div><label>Full Name *</label><input name="fullName" required></div><div><label>App Username *</label><input name="username" required minlength="3"></div><div><label>Email *</label><input name="email" type="email" required></div><div><label>Password * (8+ characters)</label><input name="password" type="password" minlength="8" required autocomplete="new-password"></div><div><label>Free Fire Name *</label><input name="gameName" required></div><div><label>Free Fire UID *</label><input name="uid" pattern="[0-9]{5,20}" inputmode="numeric" required></div><div class="full"><label>Contact Number (Pakistan) *</label><input name="phone" required placeholder="+923000000000"></div><button class="btn primary full">Create Player Account</button></form>
-<form id="setupForm" class="formgrid hidden"><div class="full"><label>Admin Full Name</label><input name="fullName" required></div><div class="full"><label>Admin Username</label><input name="username" required minlength="3"></div><div class="full"><label>Admin Email</label><input name="email" type="email" required></div><div class="full"><label>Admin Password</label><input name="password" type="password" minlength="8" required></div><p class="notice full">Creates the master administrator session profile for this browser device.</p><button class="btn primary full">Create Master Admin</button></form>
-</div></section>
-</main><footer class="footer"><div class="wrap row space"><span>© <span id="year"></span> Free Fight Tournaments</span><span>Advanced Esports Engine • Fully Responsive</span></div></footer><div class="toast" id="toast" role="status"></div>
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-<script>
-const KEY='fft_elite_pro_v2', $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)], id=()=>Math.random().toString(36).slice(2,11);
-const fresh=()=>({users:[],current:null,matches:[{id:id(),name:'Solo Bermuda Clash',mode:'Solo',fee:50,prize:1500,slots:48,status:'Upcoming',room:'ID: 489210 | Pass: ff99',description:'Classic Bermuda map solo showdown.'},{id:id(),name:'Duo Kalahari Strike',mode:'Duo',fee:100,prize:3000,slots:24,status:'Ongoing',room:'ID: 778129 | Pass: duo22',description:'Team up and outplay rivals.'},{id:id(),name:'Squad Purgatory War',mode:'Squad',fee:200,prize:6000,slots:12,status:'Upcoming',room:'ID: 332145 | Pass: squad88',description:'Full squad tactical tournament.'}],photos:[],payments:[],results:[],squads:[{id:id(),name:'Alpha Gaming',tag:'[ALPH]',members:[]}],theme:{accent:'#b9ff36',font:'system-ui,Arial,sans-serif'}});
-let db;try{db={...fresh(),...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch{db=fresh()}
-function save(){try{localStorage.setItem(KEY,JSON.stringify(db));return true}catch{toast('Storage limit reached.');return false}}
-function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function toast(s){let t=$('#toast');t.textContent=s;t.style.display='block';clearTimeout(window.tt);window.tt=setTimeout(()=>t.style.display='none',4000)}
-function me(){return db.users.find(u=>u.id===db.current)}
-function cash(n){return Number(n||0).toLocaleString()+' Coins'}
-function auth(which='login'){setAuth(which);$('#authSection').scrollIntoView({behavior:'smooth'})} function setAuth(which){$$('[data-auth]').forEach(b=>b.classList.toggle('active',b.dataset.auth===which));$('#loginForm').classList.toggle('hidden',which!=='login');$('#registerForm').classList.toggle('hidden',which!=='register');$('#setupForm').classList.toggle('hidden',which!=='setup');$('#authTitle').textContent=which==='login'?'Login':which==='register'?'Player Registration':'Master Admin Setup';if(which==='setup'&&db.users.some(u=>u.role==='admin')){toast('Admin already exists.');$('#setupForm').classList.add('hidden')}}
+    .wallet-chip {
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 4px 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent-green);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .wallet-chip:hover {
+      border-color: var(--accent-green);
+      box-shadow: 0 0 8px rgba(0, 230, 118, 0.3);
+    }
 
-function applyTheme(){
-  if(!db.theme) db.theme={accent:'#b9ff36',font:'system-ui,Arial,sans-serif'};
-  document.documentElement.style.setProperty('--lime', db.theme.accent);
-  document.body.style.fontFamily = db.theme.font;
-  if($('#themeAccent')) $('#themeAccent').value = db.theme.accent;
-  if($('#themeFont')) $('#themeFont').value = db.theme.font;
-}
-function changeTheme(val){db.theme.accent=val;save();applyTheme();}
-function changeFont(val){db.theme.font=val;save();applyTheme();}
+    .btn-icon {
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-icon:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
 
-function render(){
-  let u=me();
-  $('#accountNav').innerHTML=u?`<span class="chip">Hi, <b>${esc(u.username)}</b></span><button class="btn secondary small" onclick="go('profile')">Profile</button><button class="btn secondary small" onclick="go('more')">More</button>${u.role==='admin'?'<button class="btn primary small" onclick="goAdmin()">Admin</button>':''}`:'<button class="btn primary" onclick="auth(\'login\')">Login / Register</button>';
-  $('#countMatches').textContent=db.matches.length;
-  $('#countPlayers').textContent=db.users.filter(x=>x.role==='player').length;
-  $('#countSquads').textContent=db.squads.length;
-  matches();leader();wallet();profile();squadsView();admin();applyTheme();
-  if(u){['wallet','profile','more','design','squads'].forEach(x=>$('#'+x).classList.remove('hidden'));if(u.role==='admin')$('#admin').classList.remove('hidden');else $('#admin').classList.add('hidden')}
-  else {['wallet','profile','more','admin','design'].forEach(x=>$('#'+x).classList.add('hidden'));$('#squads').classList.remove('hidden');}
-}
+    .announcement-bar {
+      background: linear-gradient(90deg, #1b2438 0%, #261622 50%, #1b2438 100%);
+      border-bottom: 1px solid rgba(255, 153, 0, 0.3);
+      padding: 8px 16px;
+      font-size: 12px;
+      color: #ffe6aa;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .announcement-bar strong {
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .announcement-marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      flex: 1;
+    }
 
-function matches(filter='All'){
-  $('#matchCards').innerHTML=db.matches.filter(m=>filter==='All'||m.status===filter).map(m=>{
-    let photo=db.photos[0], bg=photo?`background-image:linear-gradient(0deg,#081016aa,transparent),url('${photo.image}')`:'';
-    let u=me(), joined=u && db.payments.some(p=>p.userId===u.id && p.matchId===m.id && p.status==='Approved');
-    return `<article class="card"><div class="banner" style="${bg}"><span class="pill">${esc(m.mode)}</span><span class="pill ${m.status==='Ongoing'?'gold':m.status==='Completed'?'redpill':''}">${esc(m.status)}</span></div><div class="body"><h3>${esc(m.name)}</h3><p>${esc(m.description)}</p><div class="meta"><div><small>Entry Fee</small><b>${cash(m.fee)}</b></div><div><small>Prize Pool</small><b>${cash(m.prize)}</b></div><div><small>Slots Available</small><b>${esc(m.slots)}</b></div><div><small>Schedule</small><b>${esc(m.date?new Date(m.date).toLocaleString():'Live Soon')}</b></div></div>${joined && m.room?`<div class="panel" style="margin:10px 0;background:#060e14;border-color:var(--lime)"><small style="color:var(--lime)">🔓 ROOM CREDENTIALS UNLOCKED</small><b>${esc(m.room)}</b></div>`:''}<button class="btn ${joined?'secondary':'primary'}" onclick="join('${m.id}')">${joined?'Joined (View Room)':'Register Match'}</button></div></article>`
-  }).join('')||'<div class="muted">No tournaments available.</div>';
-}
-$$('[data-filter]').forEach(b=>b.onclick=()=>{$$
-('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));matches(b.dataset.filter)});
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(18, 25, 39, 0.98);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 4px 10px;
+      z-index: 99;
+    }
 
-function join(mid){
-  let u=me(), m=db.matches.find(x=>x.id===mid);
-  if(!u){auth('login');toast('Please login to register.');return;}
-  let already=db.payments.find(p=>p.userId===u.id && p.matchId===mid);
-  if(already){toast('You are already registered or pending review for this match!');return;}
-  if(Number(u.balance||0)<m.fee){toast('Insufficient coins! Please deposit funds in your wallet.');go('wallet');return;}
-  if(!confirm(`Register for ${m.name} for ${cash(m.fee)}?`))return;
-  u.balance-=m.fee;
-  db.payments.push({id:id(),type:'join',userId:u.id,matchId:mid,amount:m.fee,method:'Platform Wallet',status:'Approved',created:new Date().toISOString()});
-  save();render();toast('Successfully registered! Room details unlocked.');
-}
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px 12px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .nav-item svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+    .nav-item.active {
+      color: var(--primary);
+    }
+    .nav-item.active svg {
+      filter: drop-shadow(0 0 6px var(--primary-glow));
+    }
 
-function squadsView(){
-  $('#squadList').innerHTML=db.squads.map(s=>`<div class="panel row space" style="margin:8px 0"><span><b>${esc(s.name)}</b> <span class="pill">${esc(s.tag)}</span><br><small class="muted">Members: ${s.members?.length||0} Players</small></span><button class="btn secondary small" onclick="joinSquad('${s.id}')">Join Squad</button></div>`).join('')||'<p class="muted">No squads created yet.</p>';
-}
-$('#squadForm').onsubmit=e=>{
-  e.preventDefault(); let u=me(); if(!u){auth('login');return;}
-  let d=Object.fromEntries(new FormData(e.currentTarget));
-  db.squads.push({id:id(),name:d.name,tag:d.tag,members:[u.id]});
-  save();e.currentTarget.reset();render();toast('Squad created successfully!');
-};
-function joinSquad(sid){
-  let u=me(); if(!u){auth('login');return;}
-  let s=db.squads.find(x=>x.id===sid);
-  if(s.members.includes(u.id)){toast('Already in squad!');return;}
-  s.members.push(u.id); save(); render(); toast('Joined squad successfully!');
-}
+    main {
+      flex: 1;
+      padding: 16px;
+      padding-bottom: 90px;
+      max-width: 960px;
+      margin: 0 auto;
+      width: 100%;
+    }
 
-function leader(){
-  let rs=[...db.results].sort((a,b)=>b.points-a.points||b.kills-a.kills);
-  $('#leaderRows').innerHTML=rs.map((r,i)=>{let u=db.users.find(x=>x.id===r.userId);return `<tr><td class="rank">#${i+1}</td><td>${esc(u?.gameName||'Player')}</td><td>${esc(u?.uid||'—')}</td><td>${esc(r.mode)}</td><td>${r.kills}</td><td>${r.points}</td></tr>`}).join('')||'<tr><td colspan="6">No leaderboard records found.</td></tr>';
-}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      outline: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #ff9900 0%, #ff5500 100%);
+      color: #fff;
+      box-shadow: 0 4px 12px var(--primary-glow);
+    }
+    .btn-primary:hover {
+      box-shadow: 0 6px 16px rgba(255, 153, 0, 0.6);
+      transform: translateY(-1px);
+    }
+    .btn-danger {
+      background: linear-gradient(135deg, #ff334b 0%, #d5001c 100%);
+      color: #fff;
+    }
+    .btn-danger:hover {
+      box-shadow: 0 4px 14px rgba(255, 51, 75, 0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .btn-success {
+      background: linear-gradient(135deg, #00e676 0%, #00b248 100%);
+      color: #0a1b0d;
+      font-weight: 800;
+    }
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 12px;
+      border-radius: 6px;
+    }
+    .btn-block {
+      width: 100%;
+    }
 
-function go(s){$('#'+s).classList.remove('hidden');$('#'+s).scrollIntoView({behavior:'smooth'});}
-function goAdmin(){if(me()?.role!=='admin'){toast('Restricted access.');return}go('admin')}
-function logout(){db.current=null;save();render();toast('Logged out successfully.')}
-function profile(){
-  let u=me();
-  $('#profileContent').innerHTML=u?`<div class="panel"><div class="row space"><div><div class="eyebrow">${esc(u.role)} Account</div><h3>${esc(u.fullName)}</h3><div class="muted">@${esc(u.username)} • ${esc(u.email)}</div></div><span class="chip">Balance: <b>${cash(u.balance)}</b></span></div><div class="hr"></div><div class="layout"><div><label>Free Fire Name</label>${esc(u.gameName||'—')}</div><div><label>Free Fire UID</label>${esc(u.uid||'—')}</div><div><label>Phone</label>${esc(u.phone||'—')}</div><div><label>Role</label>${esc(u.role)}</div></div></div>`:'Login required.';
-}
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .card:hover {
+      border-color: #384a6e;
+    }
 
-function wallet(){
-  let u=me(); if(!u){$('#walletContent').innerHTML='Login required to view wallet.';return;}
-  let req=db.payments.filter(p=>p.userId===u.id).reverse();
-  $('#walletContent').innerHTML=`<div class="layout"><div class="panel"><div class="eyebrow">Coin Balance</div><h2 style="color:var(--lime)">${cash(u.balance)}</h2><p class="notice">Supported deposit methods: Easypaisa, JazzCash, NayaPay, Sadapay.</p><h3>Deposit Request</h3><form id="depositForm" class="formgrid"><div><label>Amount (Coins)</label><input name="amount" type="number" min="50" required></div><div><label>Method</label><select name="method"><option>Easypaisa</option><option>JazzCash</option><option>NayaPay</option><option>Sadapay</option></select></div><div><label>Sender Account Name</label><input name="sender" required></div><div><label>Transaction ID / Ref</label><input name="reference" required></div><div class="full"><label>Payment Screenshot Proof</label><input type="file" name="proof" accept="image/*"></div><button class="btn primary full">Submit Deposit Request</button></form></div><div class="panel"><h3>Withdrawal Request</h3><form id="withdrawForm" class="formgrid"><div class="full"><label>Amount (Coins)</label><input name="amount" type="number" min="100" required></div><div><label>Method</label><select name="method"><option>Easypaisa</option><option>JazzCash</option><option>NayaPay</option><option>Sadapay</option></select></div><div><label>Account Title</label><input name="holder" required></div><div class="full"><label>Account Number / Phone</label><input name="account" required></div><button class="btn secondary full">Request Withdrawal</button></form></div></div><div class="panel" style="margin-top:14px"><h3>Transaction History</h3><div class="tablewrap"><table><thead><tr><th>Type</th><th>Amount</th><th>Method</th><th>Status</th><th>Reference</th></tr></thead><tbody>${req.map(p=>`<tr><td>${esc(p.type)}</td><td>${cash(p.amount)}</td><td>${esc(p.method)}</td><td>${esc(p.status)}</td><td>${esc(p.reference||'—')}</td></tr>`).join('')||'<tr><td colspan="5">No records found.</td></tr>'}</tbody></table></div></div>`;
-  $('#depositForm').onsubmit=async e=>{
-    e.preventDefault(); let f=e.currentTarget,d=new FormData(f),file=d.get('proof'),proof='';
-    if(file&&file.size){if(file.size>450000){toast('Screenshot must be under 450KB.');return}proof=await dataUrl(file)}
-    db.payments.push({id:id(),type:'deposit',userId:u.id,amount:+d.get('amount'),method:d.get('method'),sender:d.get('sender'),reference:d.get('reference'),proof,status:'Pending'});
-    save();render();toast('Deposit submitted for admin verification.');
-  };
-  $('#withdrawForm').onsubmit=e=>{
-    e.preventDefault(); let d=new FormData(e.currentTarget),amt=+d.get('amount');
-    if(amt>Number(u.balance||0)){toast('Insufficient balance.');return;}
-    db.payments.push({id:id(),type:'withdraw',userId:u.id,amount:amt,method:d.get('method'),holder:d.get('holder'),account:d.get('account'),status:'Pending'});
-    save();render();toast('Withdrawal request submitted.');
-  };
-}
-function dataUrl(file){return new Promise((ok,no)=>{let r=new FileReader();r.onload=()=>ok(r.result);r.onerror=no;r.readAsDataURL(file)})}
+    .form-group {
+      margin-bottom: 14px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-control {
+      width: 100%;
+      background: var(--bg-input);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: #fff;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 8px var(--primary-glow);
+    }
+    select.form-control {
+      cursor: pointer;
+    }
 
-function admin(){
-  if(me()?.role!=='admin')return;
-  $('#adminMatchList').innerHTML=db.matches.map(m=>`<div class="panel row space" style="margin:8px 0"><span><b>${esc(m.name)}</b><br><small class="muted">${esc(m.mode)} • ${esc(m.status)} • Fee: ${cash(m.fee)}</small></span><span class="row"><button class="btn secondary small" onclick="editMatch('${m.id}')">Edit</button><button class="btn danger small" onclick="delMatch('${m.id}')">Delete</button></span></div>`).join('')||'No matches.';
-  $('#photoList').innerHTML=db.photos.map(p=>`<div class="panel row space" style="margin:8px 0"><img class="preview" src="${p.image}"><span style="flex:1"><b>${esc(p.title)}</b></span><button class="btn danger small" onclick="delPhoto('${p.id}')">Delete</button></div>`).join('')||'<p class="muted">No banners uploaded.</p>';
-  $('#playerList').innerHTML=db.users.map(u=>`<div class="panel row space" style="margin:7px 0"><span><b>${esc(u.username)}</b><br><small>${esc(u.email)} • UID: ${esc(u.uid||'—')} • Role: ${esc(u.role)}</small></span>${u.id===db.current?'Current':`<button class="btn secondary small" onclick="role('${u.id}')">${u.role==='admin'?'Make Player':'Make Admin'}</button> <button class="btn danger small" onclick="delUser('${u.id}')">Delete</button>`}</div>`).join('')||'No users.';
-  $('#paymentList').innerHTML=db.payments.map(p=>{let u=db.users.find(x=>x.id===p.userId);return `<div class="panel" style="margin:8px 0"><div class="row space"><div><b>${esc(p.type).toUpperCase()} • ${cash(p.amount)}</b><div class="muted">${esc(u?.username||'User')} • UID: ${esc(u?.uid||'—')} • ${esc(p.method)}</div><div class="muted">Ref: ${esc(p.reference||p.account||'—')}</div>${p.proof?`<a href="${p.proof}" target="_blank"><img class="preview" src="${p.proof}"></a>`:''}</div><span class="pill ${p.status==='Pending'?'gold':''}">${esc(p.status)}</span></div>${p.status==='Pending'?`<div class="row" style="margin-top:10px"><button class="btn primary small" onclick="review('${p.id}','Approved')">Approve</button><button class="btn danger small" onclick="review('${p.id}','Rejected')">Reject</button></div>`:''}</div>`}).join('')||'<p class="muted">No pending payments.</p>';
-  $('#resultPlayer').innerHTML=db.users.filter(u=>u.role==='player').map(u=>`<option value="${u.id}">${esc(u.username)} (UID: ${esc(u.uid)})</option>`).join('');
-  $('#resultAdminList').innerHTML=db.results.map(r=>`<div class="panel row space" style="margin:7px 0"><span>${esc(db.users.find(u=>u.id===r.userId)?.username||'Player')} • ${esc(r.mode)} • ${r.kills} Kills • ${r.points} Pts</span><button class="btn danger small" onclick="delResult('${r.id}')">Delete</button></div>`).join('')||'<p class="muted">No results.</p>';
-}
+    .tabs-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+    .tab-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: var(--primary);
+      color: #000;
+      border-color: var(--primary);
+      font-weight: 700;
+      box-shadow: 0 2px 10px var(--primary-glow);
+    }
 
-$('#matchForm').onsubmit=e=>{e.preventDefault();let d=Object.fromEntries(new FormData(e.currentTarget));db.matches.unshift({id:id(),...d,fee:+d.fee,prize:+d.prize,slots:+d.slots});save();e.currentTarget.reset();render();toast('Tournament created successfully!')};
-function editMatch(mid){let m=db.matches.find(x=>x.id===mid);let name=prompt('Match name:',m.name);if(name===null)return;let room=prompt('Room credentials (ID & Password):',m.room);if(room===null)return;m.name=name;m.room=room;save();render();toast('Tournament updated.')}
-function delMatch(mid){if(confirm('Delete tournament?')){db.matches=db.matches.filter(m=>m.id!==mid);save();render();toast('Tournament deleted.')}}
+    .tournament-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+    .tournament-card:hover {
+      border-color: #4a5d85;
+      transform: translateY(-2px);
+    }
+    .tournament-header {
+      background: linear-gradient(90deg, #182236 0%, #121927 100%);
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .tournament-title-area {
+      display: flex;
+      flex-direction: column;
+    }
+    .tournament-title {
+      font-size: 15px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tournament-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 12px;
+      margin-top: 2px;
+    }
 
-$('#photoForm').onsubmit=async e=>{e.preventDefault();let d=new FormData(e.currentTarget),f=d.get('image');if(f.size>450000){toast('Image too large. Max 450KB.');return}db.photos.push({id:id(),title:d.get('title'),subtitle:d.get('subtitle'),image:await dataUrl(f)});save();render();e.currentTarget.reset();toast('Banner uploaded.')};
-function delPhoto(pid){db.photos=db.photos.filter(p=>p.id!==pid);save();render();toast('Banner deleted.')}
+    .tournament-body {
+      padding: 14px 16px;
+    }
 
-function role(uid){let u=db.users.find(x=>x.id===uid);u.role=u.role==='admin'?'player':'admin';save();render();toast('Role updated.')}
-function delUser(uid){db.users=db.users.filter(u=>u.id!==uid);db.payments=db.payments.filter(p=>p.userId!==uid);save();render();toast('User deleted.')}
+    .match-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      background: var(--bg-input);
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #1f2b42;
+      margin-bottom: 12px;
+    }
+    .meta-box {
+      text-align: center;
+    }
+    .meta-box .meta-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .meta-box .meta-value {
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      margin-top: 2px;
+    }
+    .meta-box.highlight .meta-value {
+      color: var(--accent-green);
+    }
+    .meta-box.fee .meta-value {
+      color: var(--primary);
+    }
 
-function review(pid,status){
-  let p=db.payments.find(x=>x.id===pid), u=db.users.find(x=>x.id===p.userId);
-  if(p.status!=='Pending')return;
-  if(status==='Approved'&&u&&p.type==='deposit'){u.balance=Number(u.balance||0)+p.amount;}
-  else if(status==='Approved'&&u&&p.type==='withdraw'){u.balance=Math.max(0,Number(u.balance||0)-p.amount);}
-  p.status=status; save(); render(); toast('Request status updated to '+status);
-}
+    .slots-container {
+      margin-bottom: 14px;
+    }
+    .slots-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .progress-bar-bg {
+      height: 6px;
+      background: #1a2234;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #ff9900, #ff334b);
+      border-radius: 4px;
+      transition: width 0.3s ease;
+    }
 
-$('#resultForm').onsubmit=e=>{e.preventDefault();let d=Object.fromEntries(new FormData(e.currentTarget));db.results.push({id:id(),userId:d.player,mode:d.mode,kills:+d.kills,points:+d.points});save();render();toast('Leaderboard score saved!')}; function delResult(rid){db.results=db.results.filter(r=>r.id!==rid);save();render();toast('Score deleted.')}  $$('[data-tab]').forEach(b=>b.onclick=()=>{$$('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));$$('.adminpanel').forEach(x=>x.classList.toggle('hidden',x.id!==b.dataset.tab))});$$('[data-auth]').forEach(b=>b.onclick=()=>setAuth(b.dataset.auth));$('#loginForm').onsubmit=e=>{e.preventDefault();let d=Object.fromEntries(new FormData(e.currentTarget)),u=db.users.find(x=>x.email.toLowerCase()===d.email.toLowerCase()&&x.password===d.password);if(!u){toast('Invalid email or password.');return}db.current=u.id;save();render();toast('Welcome back, '+u.username);$('#home').scrollIntoView({behavior:'smooth'})};
-$('#registerForm').onsubmit=e=>{e.preventDefault();let d=Object.fromEntries(new FormData(e.currentTarget));if(db.users.some(u=>u.email.toLowerCase()===d.email.toLowerCase()||u.username.toLowerCase()===d.username.toLowerCase())){toast('Email or username already exists.');return}let u={id:id(),...d,role:'player',balance:0};db.users.push(u);db.current=u.id;save();render();toast('Account created successfully!');$('#home').scrollIntoView({behavior:'smooth'})};
-$('#setupForm').onsubmit=e=>{e.preventDefault();if(db.users.some(u=>u.role==='admin')){toast('Admin already configured.');return}let d=Object.fromEntries(new FormData(e.currentTarget)),u={id:id(),...d,role:'admin',balance:0};db.users.push(u);db.current=u.id;save();render();toast('Master admin account created!');$('#home').scrollIntoView({behavior:'smooth'})};
+    .tournament-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding-top: 4px;
+    }
 
-$('#year').textContent=new Date().getFullYear();
-render();
-</script></body></html>
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(4px);
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+    .modal-backdrop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .modal-dialog {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      width: 100%;
+      max-width: 500px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      position: relative;
+    }
+    .modal-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .modal-body {
+      padding: 18px;
+    }
+    .modal-footer {
+      padding: 12px 18px;
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .quick-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .quick-chip {
+      background: var(--bg-input);
+      border: 1px dashed var(--border-color);
+      color: var(--text-muted);
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.2s;
+    }
+    .quick-chip:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    #toast-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 300;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+    }
+    .toast {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--primary);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 260px;
+      animation: slideIn 0.3s forwards;
+      pointer-events: auto;
+    }
+    .toast.toast-error { border-left-color: var(--accent-red); }
+    .toast.toast-success { border-left-color: var(--accent-green); }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+      margin-top: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      text-align: left;
+    }
+    th {
+      background: #182236;
+      color: var(--text-muted);
+      padding: 10px 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 11px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .room-box {
+      background: linear-gradient(135deg, #1b273d 0%, #151d2f 100%);
+      border: 1px solid #2d3f63;
+      border-radius: 10px;
+      padding: 14px;
+      margin-top: 10px;
+    }
+    .room-field {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    }
+    .room-field:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 80px;
+      right: 18px;
+      background: #25d366;
+      color: #fff;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+      z-index: 98;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+    .whatsapp-float svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+    }
+
+    .view-section {
+      display: none;
+    }
+    .view-section.active {
+      display: block;
+      animation: fadeIn 0.2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Toast Notifications -->
+  <div id="toast-container"></div>
+
+  <!-- AUTH GATE (Mandatory: If not logged in, user sees ONLY this screen) -->
+  <div id="auth-screen" style="display: none; min-height: 100vh; padding: 24px 16px; background: radial-gradient(circle at 50% 20%, #1b263b 0%, #0a0e17 80%);">
+    <div style="max-width: 440px; margin: 20px auto;">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <div style="width: 58px; height: 58px; margin: 0 auto 12px; background: linear-gradient(135deg, #ff9900, #ff334b); border-radius: 14px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 20px rgba(255,153,0,0.6);">
+          <svg style="width: 34px; height: 34px; fill: #fff;" viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10h2v4h-2zm0 5h2v2h-2z"/></svg>
+        </div>
+        <h1 style="font-size: 22px; color: #fff;">ABDULLAH BAJRAN</h1>
+        <p style="font-size: 12px; color: var(--primary); font-weight: 700; letter-spacing: 1px;">FREE FIRE ESPORTS TOURNAMENTS</p>
+        <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">Login or Register to access matches, wallet, and room keys.</p>
+      </div>
+
+      <div class="card" style="padding: 22px;">
+        <div style="display: flex; border-bottom: 1px solid var(--border-color); margin-bottom: 18px;">
+          <button id="auth-tab-login" class="btn" style="flex: 1; background: none; border-radius: 0; border-bottom: 2px solid var(--primary); color: #fff; font-size: 14px;" onclick="switchAuthMode('login')">
+            Player Login
+          </button>
+          <button id="auth-tab-register" class="btn" style="flex: 1; background: none; border-radius: 0; border-bottom: 2px solid transparent; color: var(--text-muted); font-size: 14px;" onclick="switchAuthMode('register')">
+            New Registration
+          </button>
+        </div>
+
+        <!-- Quick Demo Accounts Helper -->
+        <div style="margin-bottom: 16px;">
+          <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 6px; font-weight: 600;">FAST QUICK-FILL FOR TESTING:</div>
+          <div class="quick-chips">
+            <div class="quick-chip" onclick="fillAuth('bajranbajrang523@gmail.com', '23452345an.com')">
+              👑 Super Admin Bajran
+            </div>
+            <div class="quick-chip" onclick="fillAuth('bajranbajrang523@gmail.com', '23452345ab1.com')">
+              🛡️ Admin Hamza
+            </div>
+            <div class="quick-chip" onclick="fillAuth('player@progenius.com', 'player123')">
+              🎮 Demo Player
+            </div>
+          </div>
+        </div>
+
+        <!-- Login Form -->
+        <form id="form-login" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label>Email or Free Fire UID</label>
+            <input type="text" id="login-email" class="form-control" placeholder="bajranbajrang523@gmail.com or 284918231" required />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="login-password" class="form-control" placeholder="••••••••" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" style="padding: 12px; margin-top: 10px;">
+            Log In & Enter Arena
+          </button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="form-register" style="display: none;" onsubmit="handleRegister(event)">
+          <div class="form-group">
+            <label>Full Player Name</label>
+            <input type="text" id="reg-name" class="form-control" placeholder="Muhammad Ali" required />
+          </div>
+          <div class="form-group">
+            <label>Free Fire Player UID (Numbers)</label>
+            <input type="number" id="reg-ffuid" class="form-control" placeholder="e.g. 2849182319" required />
+          </div>
+          <div class="form-group">
+            <label>In-Game Name (IGN)</label>
+            <input type="text" id="reg-ign" class="form-control" placeholder="e.g. BADSHAH_FF" required />
+          </div>
+          <div class="form-group">
+            <label>WhatsApp / Phone Number</label>
+            <input type="tel" id="reg-phone" class="form-control" placeholder="e.g. 03207394660" required />
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="reg-email" class="form-control" placeholder="player@gmail.com" required />
+          </div>
+          <div class="form-group">
+            <label>Set Password</label>
+            <input type="password" id="reg-pass" class="form-control" placeholder="Min 6 characters" minlength="6" required />
+          </div>
+          <button type="submit" class="btn btn-success btn-block" style="padding: 12px; margin-top: 10px;">
+            Complete Registration (Get Rs. 50 Bonus)
+          </button>
+        </form>
+      </div>
+
+      <div style="text-align: center; color: var(--text-muted); font-size: 12px; margin-top: 16px;">
+        Official Support: WhatsApp <a href="https://wa.me/923207394660" target="_blank" style="color: #25d366; text-decoration: none; font-weight: 700;">03207394660</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUTHENTICATED APP SHELL -->
+  <div id="app-shell" style="display: none;">
+
+    <!-- Top Header -->
+    <header>
+      <div class="brand-group" onclick="switchView('lobby')">
+        <div class="brand-logo">
+          <svg viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10h2v4h-2zm0 5h2v2h-2z"/></svg>
+        </div>
+        <div class="brand-text">
+          <h1>ABDULLAH BAJRAN <span id="user-role-badge" class="badge badge-admin" style="display: none;">ADMIN</span></h1>
+          <p>PRO ESPORTS ARENA</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Balance Chip -->
+        <div class="wallet-chip" onclick="switchView('wallet')">
+          <svg style="width: 16px; height: 16px; fill: var(--accent-green);" viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          <span>PKR <strong id="header-balance">0</strong></span>
+        </div>
+
+        <!-- Logout Button -->
+        <button class="btn-icon" title="Logout" onclick="handleLogout()">
+          <svg style="width: 18px; height: 18px; fill: currentColor;" viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+      <strong>NOTICE:</strong>
+      <div class="announcement-marquee" id="live-announcement-text">
+        🚨 Custom Room IDs & Passwords will be revealed in "My Rooms" 15 minutes before match start! Payment verification via JazzCash & EasyPaisa WhatsApp 03207394660.
+      </div>
+    </div>
+
+    <!-- MAIN APP CONTENT -->
+    <main>
+
+      <!-- VIEW 1: TOURNAMENTS LOBBY -->
+      <section id="view-lobby" class="view-section active">
+        <!-- Category Filters -->
+        <div class="tabs-bar">
+          <button class="tab-btn active" onclick="filterTournaments('all', this)">All Tournaments</button>
+          <button class="tab-btn" onclick="filterTournaments('Solo', this)">Solo</button>
+          <button class="tab-btn" onclick="filterTournaments('Duo', this)">Duo</button>
+          <button class="tab-btn" onclick="filterTournaments('Squad', this)">Squad</button>
+          <button class="tab-btn" onclick="filterTournaments('Clash Squad', this)">Clash Squad</button>
+        </div>
+
+        <!-- Tournaments List -->
+        <div id="tournaments-list-container">
+          <!-- Injected via JavaScript -->
+        </div>
+      </section>
+
+      <!-- VIEW 2: MY MATCHES & ROOM CREDENTIALS -->
+      <section id="view-my-matches" class="view-section">
+        <h2 style="font-size: 18px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+          <span>🎯</span> My Joined Matches & Room Credentials
+        </h2>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 16px;">
+          Here are the matches you have entered. Room ID and Password will appear automatically before match start.
+        </p>
+        <div id="my-matches-container">
+          <!-- Injected via JavaScript -->
+        </div>
+      </section>
+
+      <!-- VIEW 3: WALLET & PAYMENTS -->
+      <section id="view-wallet" class="view-section">
+        <div class="card" style="background: linear-gradient(135deg, #18253d 0%, #101726 100%); border-color: #2f436b;">
+          <div style="font-size: 12px; color: var(--text-muted); text-transform: uppercase;">Current Wallet Balance</div>
+          <div style="font-size: 32px; font-weight: 800; color: var(--accent-green); margin: 4px 0 12px;">
+            PKR <span id="wallet-balance-display">0</span>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn btn-primary" onclick="openDepositModal()">
+              <span>+ Deposit PKR</span>
+            </button>
+            <button class="btn btn-outline" onclick="openWithdrawModal()">
+              <span>Withdraw Winnings</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Official Accounts Card -->
+        <div class="card">
+          <h3 style="font-size: 15px; margin-bottom: 12px; color: var(--primary);">Official Deposit Accounts (Pakistan)</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+            <div style="background: var(--bg-input); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+              <div style="font-weight: 700; color: #ff334b;">JazzCash</div>
+              <div style="font-size: 15px; font-weight: 800; margin: 4px 0;">03001234567</div>
+              <div style="font-size: 11px; color: var(--text-muted);">Title: ABDULLAH BAJRAN</div>
+              <button class="btn btn-outline btn-sm" style="margin-top: 8px;" onclick="copyText('03001234567', 'JazzCash Number Copied!')">Copy Number</button>
+            </div>
+            <div style="background: var(--bg-input); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+              <div style="font-weight: 700; color: #00e676;">EasyPaisa</div>
+              <div style="font-size: 15px; font-weight: 800; margin: 4px 0;">03129876543</div>
+              <div style="font-size: 11px; color: var(--text-muted);">Title: HAMZA / BAJRAN</div>
+              <button class="btn btn-outline btn-sm" style="margin-top: 8px;" onclick="copyText('03129876543', 'EasyPaisa Number Copied!')">Copy Number</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transactions History -->
+        <div class="card">
+          <h3 style="font-size: 15px; margin-bottom: 10px;">Transaction History</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Amount</th>
+                  <th>Method / Note</th>
+                  <th>Status</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="wallet-history-tbody">
+                <!-- Injected via JavaScript -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 4: ADMIN CONTROLS (Delete & Manage Matches) -->
+      <section id="view-admin" class="view-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 10px;">
+          <div>
+            <h2 style="font-size: 18px; color: var(--primary);">🛡️ Tournament Administration</h2>
+            <p style="font-size: 12px; color: var(--text-muted);">Inspect match details, read rosters, and delete or create matches.</p>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-primary btn-sm" onclick="openCreateMatchModal()">+ Create New Match</button>
+          </div>
+        </div>
+
+        <!-- Admin Matches Manager (READ & DELETE MATCHES) -->
+        <div class="card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <h3 style="font-size: 15px;">All Tournaments & Room Credentials</h3>
+            <span class="badge badge-admin">SUPER ADMIN PANEL</span>
+          </div>
+
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Match Title</th>
+                  <th>Mode / Map</th>
+                  <th>Entry / Prize</th>
+                  <th>Slots</th>
+                  <th>Room ID / Pass</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="admin-matches-tbody">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Pending Deposit Approvals -->
+        <div class="card">
+          <h3 style="font-size: 15px; margin-bottom: 12px; color: var(--accent-green);">Pending Wallet Deposit Approvals</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Player</th>
+                  <th>Amount</th>
+                  <th>Method</th>
+                  <th>Transaction ID (TID)</th>
+                  <th>Date</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="admin-deposits-tbody">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Registered Players & Free Fire UIDs Roster -->
+        <div class="card">
+          <h3 style="font-size: 15px; margin-bottom: 12px;">Registered Players & Free Fire UIDs</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>FF UID</th>
+                  <th>IGN</th>
+                  <th>Email</th>
+                  <th>Balance</th>
+                  <th>Copy UID</th>
+                </tr>
+              </thead>
+              <tbody id="admin-players-tbody">
+                <!-- Injected via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 5: PROFILE & STATS -->
+      <section id="view-profile" class="view-section">
+        <div class="card" style="text-align: center; padding: 24px;">
+          <div style="width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #ff9900, #ff334b); margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 800; color: #fff;">
+            <span id="profile-avatar-char">P</span>
+          </div>
+          <h2 id="profile-name" style="font-size: 20px;">Player Name</h2>
+          <div style="color: var(--primary); font-size: 14px; font-weight: 700; margin-top: 2px;">
+            IGN: <span id="profile-ign">PLAYER_IGN</span>
+          </div>
+          <div style="color: var(--text-muted); font-size: 12px; margin-top: 4px;">
+            Free Fire UID: <strong id="profile-ffuid" style="color: #fff;">-</strong>
+          </div>
+          <div style="display: inline-block; margin-top: 10px;">
+            <button class="btn btn-outline btn-sm" onclick="copyText(document.getElementById('profile-ffuid').innerText, 'Free Fire UID Copied!')">
+              Copy My UID
+            </button>
+          </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 16px;">
+          <div class="card" style="text-align: center; margin: 0;">
+            <div style="font-size: 24px; font-weight: 800; color: var(--accent-cyan);" id="profile-matches-count">0</div>
+            <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Matches Joined</div>
+          </div>
+          <div class="card" style="text-align: center; margin: 0;">
+            <div style="font-size: 24px; font-weight: 800; color: var(--accent-green);" id="profile-total-winnings">PKR 0</div>
+            <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">Total Winnings</div>
+          </div>
+        </div>
+
+        <!-- Contact Support -->
+        <div class="card">
+          <h3 style="font-size: 15px; margin-bottom: 10px;">Tournament Rules & Fair Play</h3>
+          <ul style="font-size: 12px; color: var(--text-muted); padding-left: 18px; line-height: 1.8;">
+            <li>No hacking, script usage, or emulators unless specified.</li>
+            <li>Take a screenshot of your match result for prize claims.</li>
+            <li>Prize is credited to your wallet within 30 minutes after match verification.</li>
+            <li>Contact official Admin Abdullah Bajran & Hamza for any match disputes.</li>
+          </ul>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav">
+      <button class="nav-item active" onclick="switchView('lobby', this)">
+        <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <span>Lobby</span>
+      </button>
+      <button class="nav-item" onclick="switchView('my-matches', this)">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1.4c0-2 4-3.1 6-3.1s6 1.1 6 3.1V18z"/></svg>
+        <span>My Rooms</span>
+      </button>
+      <button class="nav-item" onclick="switchView('wallet', this)">
+        <svg viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+        <span>Wallet</span>
+      </button>
+      <button id="nav-admin-btn" class="nav-item" style="display: none;" onclick="switchView('admin', this)">
+        <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+        <span>Admin</span>
+      </button>
+      <button class="nav-item" onclick="switchView('profile', this)">
+        <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        <span>Profile</span>
+      </button>
+    </nav>
+
+    <!-- Floating WhatsApp Support Button -->
+    <a href="https://wa.me/923207394660?text=Hello%20Abdullah%20Bajran,%20I%20need%20help%20with%20Free%20Fire%20Tournament" target="_blank" class="whatsapp-float" title="Contact WhatsApp Support">
+      <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24m4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.18-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.41-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.37-.44.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1 1.04.16 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+    </a>
+
+  </div>
+
+  <!-- MODALS -->
+
+  <!-- Modal: Join Match -->
+  <div id="modal-join" class="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="join-modal-title" style="font-size: 16px;">Confirm Match Entry</h3>
+        <button class="btn-icon" onclick="closeModal('modal-join')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div style="background: var(--bg-input); padding: 12px; border-radius: 8px; margin-bottom: 14px;">
+          <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+            <span style="color: var(--text-muted);">Entry Fee:</span>
+            <span style="font-weight: 800; color: var(--primary);" id="join-modal-fee">PKR 0</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 4px;">
+            <span style="color: var(--text-muted);">Your Wallet Balance:</span>
+            <span style="font-weight: 800; color: var(--accent-green);" id="join-modal-balance">PKR 0</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 13px;">
+            <span style="color: var(--text-muted);">Mode & Map:</span>
+            <span style="font-weight: 700; color: #fff;" id="join-modal-map">Solo / Bermuda</span>
+          </div>
+        </div>
+
+        <form onsubmit="confirmJoinMatch(event)">
+          <div class="form-group">
+            <label>Free Fire Player UID</label>
+            <input type="text" id="join-ffuid" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>In-Game Name (IGN)</label>
+            <input type="text" id="join-ign" class="form-control" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" style="padding: 12px; margin-top: 10px;">
+            Pay Entry & Join Tournament
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Deposit Money -->
+  <div id="modal-deposit" class="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 style="font-size: 16px;">Deposit Funds</h3>
+        <button class="btn-icon" onclick="closeModal('modal-deposit')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+          Send money via JazzCash or EasyPaisa, then enter your Transaction ID (TID) below for approval.
+        </p>
+        <form onsubmit="handleDepositSubmit(event)">
+          <div class="form-group">
+            <label>Select Payment Method</label>
+            <select id="deposit-method" class="form-control" required>
+              <option value="JazzCash">JazzCash (03001234567 - ABDULLAH BAJRAN)</option>
+              <option value="EasyPaisa">EasyPaisa (03129876543 - HAMZA / BAJRAN)</option>
+              <option value="Bank Alfalah">Bank Alfalah (PK12ALFH0001234567890)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Amount in PKR</label>
+            <input type="number" id="deposit-amount" class="form-control" min="50" placeholder="e.g. 200" required />
+          </div>
+          <div class="form-group">
+            <label>Sender Mobile / Account Number</label>
+            <input type="text" id="deposit-sender" class="form-control" placeholder="e.g. 03211234567" required />
+          </div>
+          <div class="form-group">
+            <label>Transaction ID (TID)</label>
+            <input type="text" id="deposit-tid" class="form-control" placeholder="e.g. 19847291823" required />
+          </div>
+          <button type="submit" class="btn btn-success btn-block" style="padding: 12px; margin-top: 10px;">
+            Submit Deposit Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Withdraw Money -->
+  <div id="modal-withdraw" class="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 style="font-size: 16px;">Withdraw Winnings</h3>
+        <button class="btn-icon" onclick="closeModal('modal-withdraw')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleWithdrawSubmit(event)">
+          <div class="form-group">
+            <label>Payment Method</label>
+            <select id="withdraw-method" class="form-control" required>
+              <option value="JazzCash">JazzCash</option>
+              <option value="EasyPaisa">EasyPaisa</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your Account Number</label>
+            <input type="text" id="withdraw-account" class="form-control" placeholder="e.g. 03001234567" required />
+          </div>
+          <div class="form-group">
+            <label>Account Title / Name</label>
+            <input type="text" id="withdraw-title" class="form-control" placeholder="Account Holder Name" required />
+          </div>
+          <div class="form-group">
+            <label>Withdraw Amount (Min: PKR 100)</label>
+            <input type="number" id="withdraw-amount" class="form-control" min="100" placeholder="100" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" style="padding: 12px; margin-top: 10px;">
+            Submit Withdrawal
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Create New Match (Admin Only) -->
+  <div id="modal-create-match" class="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 style="font-size: 16px;">Create Tournament Match</h3>
+        <button class="btn-icon" onclick="closeModal('modal-create-match')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form onsubmit="handleCreateMatchSubmit(event)">
+          <div class="form-group">
+            <label>Match Title</label>
+            <input type="text" id="new-match-title" class="form-control" placeholder="e.g. Daily Bermuda Battle Royale #5" required />
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div class="form-group">
+              <label>Game Mode</label>
+              <select id="new-match-mode" class="form-control">
+                <option value="Solo">Solo</option>
+                <option value="Duo">Duo</option>
+                <option value="Squad">Squad</option>
+                <option value="Clash Squad">Clash Squad</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Map</label>
+              <select id="new-match-map" class="form-control">
+                <option value="Bermuda">Bermuda</option>
+                <option value="Purgatory">Purgatory</option>
+                <option value="Kalahari">Kalahari</option>
+                <option value="Alpine">Alpine</option>
+                <option value="Nextra">Nextra</option>
+              </select>
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+            <div class="form-group">
+              <label>Entry Fee (PKR)</label>
+              <input type="number" id="new-match-fee" class="form-control" value="50" min="0" required />
+            </div>
+            <div class="form-group">
+              <label>Prize Pool (PKR)</label>
+              <input type="number" id="new-match-prize" class="form-control" value="1200" min="0" required />
+            </div>
+            <div class="form-group">
+              <label>Per Kill (PKR)</label>
+              <input type="number" id="new-match-perkill" class="form-control" value="20" min="0" required />
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div class="form-group">
+              <label>Total Slots</label>
+              <input type="number" id="new-match-slots" class="form-control" value="48" min="2" max="100" required />
+            </div>
+            <div class="form-group">
+              <label>Schedule Time</label>
+              <input type="text" id="new-match-time" class="form-control" value="Today, 08:30 PM" required />
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div class="form-group">
+              <label>Custom Room ID</label>
+              <input type="text" id="new-match-roomid" class="form-control" placeholder="e.g. 8492019" />
+            </div>
+            <div class="form-group">
+              <label>Room Password</label>
+              <input type="text" id="new-match-roompass" class="form-control" placeholder="e.g. 1234" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Rules / Note</label>
+            <input type="text" id="new-match-rules" class="form-control" value="No emulators, no team-up, gun attributes off" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" style="padding: 12px; margin-top: 6px;">
+            Create Match
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: View Room Details & Credentials (For Players) -->
+  <div id="modal-room-info" class="modal-backdrop">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="room-info-title" style="font-size: 16px;">Custom Room Credentials</h3>
+        <button class="btn-icon" onclick="closeModal('modal-room-info')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="room-info-body">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Admin Delete Confirmation -->
+  <div id="modal-delete-confirm" class="modal-backdrop">
+    <div class="modal-dialog" style="max-width: 400px;">
+      <div class="modal-header">
+        <h3 style="font-size: 16px; color: var(--accent-red);">Confirm Deletion</h3>
+        <button class="btn-icon" onclick="closeModal('modal-delete-confirm')">&times;</button>
+      </div>
+      <div class="modal-body" style="text-align: center; padding: 20px;">
+        <svg style="width: 48px; height: 48px; fill: var(--accent-red); margin-bottom: 12px;" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+        <p style="font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 6px;">Are you sure you want to delete this match?</p>
+        <p id="delete-match-name" style="font-size: 13px; color: var(--primary); margin-bottom: 16px;"></p>
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 20px;">This match will be permanently deleted from the database and removed from all player screens.</p>
+        <div style="display: flex; gap: 10px; justify-content: center;">
+          <button class="btn btn-outline" style="flex: 1;" onclick="closeModal('modal-delete-confirm')">Cancel</button>
+          <button id="btn-confirm-delete" class="btn btn-danger" style="flex: 1;">Delete Match</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT LOGIC & LOCALSTORAGE PERSISTENCE -->
+  <script>
+    // Initial Seed Data for Tournaments
+    const INITIAL_TOURNAMENTS = [
+      {
+        id: "FF-101",
+        title: "Grand Bermuda Solo Championship",
+        mode: "Solo",
+        map: "Bermuda",
+        entryFee: 50,
+        prizePool: 1500,
+        perKill: 25,
+        totalSlots: 48,
+        joinedCount: 38,
+        scheduleTime: "Today, 08:00 PM",
+        status: "Upcoming",
+        roomId: "948201",
+        roomPass: "bajran77",
+        rules: "No emulator allowed. Mobile only. Gun properties off.",
+        participants: [
+          { uid: "284918231", ign: "BADSHAH_FF" },
+          { uid: "918274619", ign: "LEGEND_ALI" }
+        ]
+      },
+      {
+        id: "FF-102",
+        title: "Kalahari Duo Rush Survival",
+        mode: "Duo",
+        map: "Kalahari",
+        entryFee: 100,
+        prizePool: 3000,
+        perKill: 50,
+        totalSlots: 24,
+        joinedCount: 22,
+        scheduleTime: "Today, 09:30 PM",
+        status: "Upcoming",
+        roomId: "771829",
+        roomPass: "hamza99",
+        rules: "Duo teams must enter together. Grenade limits applied.",
+        participants: [
+          { uid: "338192019", ign: "PRO_HAMZA" }
+        ]
+      },
+      {
+        id: "FF-103",
+        title: "Purgatory Squad Pro League",
+        mode: "Squad",
+        map: "Purgatory",
+        entryFee: 200,
+        prizePool: 6500,
+        perKill: 100,
+        totalSlots: 12,
+        joinedCount: 11,
+        scheduleTime: "Tomorrow, 07:00 PM",
+        status: "Upcoming",
+        roomId: "331902",
+        roomPass: "fire2026",
+        rules: "Official 4v4 Squad rules. Character skills active.",
+        participants: []
+      },
+      {
+        id: "FF-104",
+        title: "Clash Squad 4v4 Deathmatch",
+        mode: "Clash Squad",
+        map: "Bermuda",
+        entryFee: 100,
+        prizePool: 1200,
+        perKill: 0,
+        totalSlots: 2,
+        joinedCount: 1,
+        scheduleTime: "Today, 10:30 PM",
+        status: "Upcoming",
+        roomId: "110293",
+        roomPass: "cs7788",
+        rules: "First to 7 rounds wins. All guns available.",
+        participants: []
+      }
+    ];
+
+    // Initial Accounts
+    const INITIAL_USERS = [
+      {
+        email: "bajranbajrang523@gmail.com",
+        passwordSuper: "23452345an.com",
+        passwordHamza: "23452345ab1.com",
+        name: "Abdullah Bajran",
+        ffuid: "777888999",
+        ign: "BAJRAN_LEADER",
+        phone: "03207394660",
+        role: "admin",
+        balance: 5000
+      },
+      {
+        email: "player@progenius.com",
+        password: "player123",
+        name: "Pro Genius Player",
+        ffuid: "284918231",
+        ign: "BADSHAH_FF",
+        phone: "03001234567",
+        role: "player",
+        balance: 350
+      }
+    ];
+
+    let currentUser = null;
+    let tournaments = [];
+    let transactions = [];
+    let users = [];
+    let pendingDeleteMatchId = null;
+    let activeFilter = "all";
+
+    function initData() {
+      if (!localStorage.getItem("bajran_tournaments")) {
+        localStorage.setItem("bajran_tournaments", JSON.stringify(INITIAL_TOURNAMENTS));
+      }
+      if (!localStorage.getItem("bajran_users")) {
+        localStorage.setItem("bajran_users", JSON.stringify(INITIAL_USERS));
+      }
+      if (!localStorage.getItem("bajran_tx")) {
+        localStorage.setItem("bajran_tx", JSON.stringify([
+          { id: "TX-1", userEmail: "player@progenius.com", type: "Deposit", amount: 200, method: "JazzCash", tid: "8492019482", status: "Approved", date: "Yesterday" },
+          { id: "TX-2", userEmail: "player@progenius.com", type: "Entry Fee", amount: 50, method: "Grand Bermuda Solo", status: "Completed", date: "Today" }
+        ]));
+      }
+
+      tournaments = JSON.parse(localStorage.getItem("bajran_tournaments"));
+      users = JSON.parse(localStorage.getItem("bajran_users"));
+      transactions = JSON.parse(localStorage.getItem("bajran_tx"));
+
+      const savedSession = localStorage.getItem("bajran_current_user");
+      if (savedSession) {
+        currentUser = JSON.parse(savedSession);
+        showAppShell();
+      } else {
+        showAuthScreen();
+      }
+    }
+
+    function saveState() {
+      localStorage.setItem("bajran_tournaments", JSON.stringify(tournaments));
+      localStorage.setItem("bajran_users", JSON.stringify(users));
+      localStorage.setItem("bajran_tx", JSON.stringify(transactions));
+      if (currentUser) {
+        localStorage.setItem("bajran_current_user", JSON.stringify(currentUser));
+      }
+    }
+
+    function showToast(message, type = "normal") {
+      const container = document.getElementById("toast-container");
+      const toast = document.createElement("div");
+      toast.className = `toast ${type === "error" ? "toast-error" : type === "success" ? "toast-success" : ""}`;
+      toast.innerHTML = `
+        <svg style="width: 18px; height: 18px; fill: currentColor; flex-shrink: 0;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+        <span>${message}</span>
+      `;
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.opacity = "0";
+        setTimeout(() => toast.remove(), 300);
+      }, 3200);
+    }
+
+    function copyText(text, successMsg = "Copied to clipboard!") {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(successMsg, "success");
+      }).catch(() => {
+        const dummy = document.createElement("input");
+        document.body.appendChild(dummy);
+        dummy.value = text;
+        dummy.select();
+        document.execCommand("copy");
+        document.body.removeChild(dummy);
+        showToast(successMsg, "success");
+      });
+    }
+
+    // AUTH GATE FUNCTIONS
+    function showAuthScreen() {
+      document.getElementById("auth-screen").style.display = "block";
+      document.getElementById("app-shell").style.display = "none";
+    }
+
+    function showAppShell() {
+      document.getElementById("auth-screen").style.display = "none";
+      document.getElementById("app-shell").style.display = "block";
+
+      document.getElementById("header-balance").innerText = currentUser.balance || 0;
+      document.getElementById("wallet-balance-display").innerText = currentUser.balance || 0;
+
+      document.getElementById("profile-name").innerText = currentUser.name || "Player";
+      document.getElementById("profile-avatar-char").innerText = (currentUser.name || "P")[0].toUpperCase();
+      document.getElementById("profile-ign").innerText = currentUser.ign || "IGN_NOT_SET";
+      document.getElementById("profile-ffuid").innerText = currentUser.ffuid || "Not Set";
+
+      const isAdmin = currentUser.role === "admin";
+      const adminBadge = document.getElementById("user-role-badge");
+      const navAdminBtn = document.getElementById("nav-admin-btn");
+      if (isAdmin) {
+        adminBadge.style.display = "inline-block";
+        navAdminBtn.style.display = "flex";
+      } else {
+        adminBadge.style.display = "none";
+        navAdminBtn.style.display = "none";
+      }
+
+      renderTournaments();
+      renderMyMatches();
+      renderWalletHistory();
+      if (isAdmin) {
+        renderAdminMatches();
+        renderAdminDeposits();
+        renderAdminPlayers();
+      }
+    }
+
+    function switchAuthMode(mode) {
+      if (mode === "login") {
+        document.getElementById("form-login").style.display = "block";
+        document.getElementById("form-register").style.display = "none";
+        document.getElementById("auth-tab-login").style.borderBottom = "2px solid var(--primary)";
+        document.getElementById("auth-tab-login").style.color = "#fff";
+        document.getElementById("auth-tab-register").style.borderBottom = "2px solid transparent";
+        document.getElementById("auth-tab-register").style.color = "var(--text-muted)";
+      } else {
+        document.getElementById("form-login").style.display = "none";
+        document.getElementById("form-register").style.display = "block";
+        document.getElementById("auth-tab-register").style.borderBottom = "2px solid var(--primary)";
+        document.getElementById("auth-tab-register").style.color = "#fff";
+        document.getElementById("auth-tab-login").style.borderBottom = "2px solid transparent";
+        document.getElementById("auth-tab-login").style.color = "var(--text-muted)";
+      }
+    }
+
+    function fillAuth(email, pass) {
+      document.getElementById("login-email").value = email;
+      document.getElementById("login-password").value = pass;
+      showToast("Credentials filled. Click Login to enter!", "normal");
+    }
+
+    function handleLogin(e) {
+      e.preventDefault();
+      const input = document.getElementById("login-email").value.trim().toLowerCase();
+      const pass = document.getElementById("login-password").value.trim();
+
+      // Check Super Admin Abdullah Bajran & Admin Hamza
+      if (input === "bajranbajrang523@gmail.com") {
+        if (pass === "23452345an.com") {
+          currentUser = {
+            email: "bajranbajrang523@gmail.com",
+            name: "Abdullah Bajran",
+            role: "admin",
+            adminType: "Super Admin",
+            balance: 99999,
+            ign: "BAJRAN_SUPER",
+            ffuid: "777888999",
+            phone: "03207394660"
+          };
+          saveState();
+          showToast("Welcome Back, Super Admin Abdullah Bajran!", "success");
+          showAppShell();
+          return;
+        } else if (pass === "23452345ab1.com") {
+          currentUser = {
+            email: "bajranbajrang523@gmail.com",
+            name: "Hamza Bajran",
+            role: "admin",
+            adminType: "Admin Hamza",
+            balance: 50000,
+            ign: "HAMZA_OFFICIAL",
+            ffuid: "338192019",
+            phone: "03129876543"
+          };
+          saveState();
+          showToast("Welcome Back, Admin Hamza!", "success");
+          showAppShell();
+          return;
+        }
+      }
+
+      // Check registered users list
+      const matchedUser = users.find(u => 
+        (u.email.toLowerCase() === input || (u.ffuid && u.ffuid.toString() === input)) && 
+        (u.password === pass || (u.passwordSuper && u.passwordSuper === pass))
+      );
+
+      if (matchedUser) {
+        currentUser = matchedUser;
+        saveState();
+        showToast(`Welcome back, ${currentUser.name}!`, "success");
+        showAppShell();
+      } else {
+        showToast("Invalid email/UID or password. Please try again.", "error");
+      }
+    }
+
+    function handleRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById("reg-name").value.trim();
+      const ffuid = document.getElementById("reg-ffuid").value.trim();
+      const ign = document.getElementById("reg-ign").value.trim();
+      const phone = document.getElementById("reg-phone").value.trim();
+      const email = document.getElementById("reg-email").value.trim().toLowerCase();
+      const pass = document.getElementById("reg-pass").value.trim();
+
+      if (users.some(u => u.email.toLowerCase() === email)) {
+        showToast("An account with this email already exists!", "error");
+        return;
+      }
+      if (users.some(u => u.ffuid === ffuid)) {
+        showToast("This Free Fire UID is already registered!", "error");
+        return;
+      }
+
+      const newUser = {
+        name,
+        ffuid,
+        ign,
+        phone,
+        email,
+        password: pass,
+        role: "player",
+        balance: 50
+      };
+
+      users.push(newUser);
+      currentUser = newUser;
+      
+      transactions.unshift({
+        id: "BONUS-" + Date.now().toString().slice(-4),
+        userEmail: newUser.email,
+        type: "Bonus",
+        amount: 50,
+        method: "Welcome Gift",
+        status: "Completed",
+        date: "Just now"
+      });
+
+      saveState();
+      showToast("Account created successfully! PKR 50 welcome bonus credited.", "success");
+      showAppShell();
+    }
+
+    function handleLogout() {
+      if (confirm("Are you sure you want to log out?")) {
+        currentUser = null;
+        localStorage.removeItem("bajran_current_user");
+        showToast("Logged out successfully.", "normal");
+        showAuthScreen();
+      }
+    }
+
+    // VIEW SWITCHING
+    function switchView(viewName, clickedBtn = null) {
+      document.querySelectorAll(".view-section").forEach(sec => sec.classList.remove("active"));
+      const targetSec = document.getElementById(`view-${viewName}`);
+      if (targetSec) targetSec.classList.add("active");
+
+      if (clickedBtn) {
+        document.querySelectorAll(".bottom-nav .nav-item").forEach(item => item.classList.remove("active"));
+        clickedBtn.classList.add("active");
+      }
+
+      if (viewName === "lobby") renderTournaments();
+      if (viewName === "my-matches") renderMyMatches();
+      if (viewName === "wallet") renderWalletHistory();
+      if (viewName === "admin" && currentUser.role === "admin") {
+        renderAdminMatches();
+        renderAdminDeposits();
+        renderAdminPlayers();
+      }
+    }
+
+    function filterTournaments(category, btn) {
+      activeFilter = category;
+      document.querySelectorAll(".tabs-bar .tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderTournaments();
+    }
+
+    function renderTournaments() {
+      const container = document.getElementById("tournaments-list-container");
+      const filtered = activeFilter === "all" 
+        ? tournaments 
+        : tournaments.filter(t => t.mode.toLowerCase() === activeFilter.toLowerCase());
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="card" style="text-align: center; padding: 32px;">
+            <p style="color: var(--text-muted); font-size: 14px;">No tournaments available in this category.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = filtered.map(t => {
+        const slotPct = Math.round((t.joinedCount / t.totalSlots) * 100);
+        const hasJoined = currentUser && t.participants && t.participants.some(p => p.uid === currentUser.ffuid || p.ign === currentUser.ign);
+        const isFull = t.joinedCount >= t.totalSlots;
+
+        return `
+          <div class="tournament-card">
+            <div class="tournament-header">
+              <div class="tournament-title-area">
+                <div class="tournament-title">
+                  <span>${t.title}</span>
+                  <span class="badge ${t.status === 'Live' ? 'badge-live' : 'badge-upcoming'}">${t.status}</span>
+                </div>
+                <div class="tournament-sub">
+                  <span>📍 Map: <strong>${t.map}</strong></span>
+                  <span>⚔️ Mode: <strong>${t.mode}</strong></span>
+                  <span>⏰ Time: <strong>${t.scheduleTime}</strong></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tournament-body">
+              <div class="match-meta-grid">
+                <div class="meta-box highlight">
+                  <div class="meta-label">Prize Pool</div>
+                  <div class="meta-value">PKR ${t.prizePool}</div>
+                </div>
+                <div class="meta-box">
+                  <div class="meta-label">Per Kill</div>
+                  <div class="meta-value">PKR ${t.perKill}</div>
+                </div>
+                <div class="meta-box fee">
+                  <div class="meta-label">Entry Fee</div>
+                  <div class="meta-value">PKR ${t.entryFee}</div>
+                </div>
+              </div>
+
+              <div class="slots-container">
+                <div class="slots-info">
+                  <span>Slots: <strong>${t.joinedCount}/${t.totalSlots}</strong></span>
+                  <span>${t.totalSlots - t.joinedCount} Slots Left</span>
+                </div>
+                <div class="progress-bar-bg">
+                  <div class="progress-bar-fill" style="width: ${slotPct}%;"></div>
+                </div>
+              </div>
+
+              <div class="tournament-footer">
+                <div style="font-size: 11px; color: var(--text-muted); flex: 1;">
+                  Rules: ${t.rules}
+                </div>
+                <div>
+                  ${hasJoined 
+                    ? `<button class="btn btn-outline btn-sm" onclick="viewRoomCredentials('${t.id}')">🔑 View Room ID</button>` 
+                    : isFull 
+                    ? `<button class="btn btn-outline btn-sm" disabled style="opacity: 0.5;">Match Full</button>` 
+                    : `<button class="btn btn-primary btn-sm" onclick="openJoinModal('${t.id}')">⚡ Join Match</button>`
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    let selectedTournamentForJoin = null;
+
+    function openJoinModal(tournamentId) {
+      selectedTournamentForJoin = tournaments.find(t => t.id === tournamentId);
+      if (!selectedTournamentForJoin) return;
+
+      document.getElementById("join-modal-title").innerText = selectedTournamentForJoin.title;
+      document.getElementById("join-modal-fee").innerText = `PKR ${selectedTournamentForJoin.entryFee}`;
+      document.getElementById("join-modal-balance").innerText = `PKR ${currentUser.balance}`;
+      document.getElementById("join-modal-map").innerText = `${selectedTournamentForJoin.mode} / ${selectedTournamentForJoin.map}`;
+
+      document.getElementById("join-ffuid").value = currentUser.ffuid || "";
+      document.getElementById("join-ign").value = currentUser.ign || "";
+
+      openModal("modal-join");
+    }
+
+    function confirmJoinMatch(e) {
+      e.preventDefault();
+      if (!selectedTournamentForJoin) return;
+
+      const fee = selectedTournamentForJoin.entryFee;
+      if (currentUser.balance < fee) {
+        showToast("Insufficient balance! Please deposit PKR in your Wallet first.", "error");
+        closeModal("modal-join");
+        switchView("wallet");
+        return;
+      }
+
+      const uid = document.getElementById("join-ffuid").value.trim();
+      const ign = document.getElementById("join-ign").value.trim();
+
+      if (!uid || !ign) {
+        showToast("Please provide your Free Fire UID and IGN", "error");
+        return;
+      }
+
+      currentUser.balance -= fee;
+      currentUser.ffuid = uid;
+      currentUser.ign = ign;
+
+      selectedTournamentForJoin.joinedCount += 1;
+      if (!selectedTournamentForJoin.participants) selectedTournamentForJoin.participants = [];
+      selectedTournamentForJoin.participants.push({ uid, ign, joinedAt: new Date().toLocaleTimeString() });
+
+      transactions.unshift({
+        id: "ENTRY-" + Date.now().toString().slice(-4),
+        userEmail: currentUser.email,
+        type: "Match Entry",
+        amount: fee,
+        method: selectedTournamentForJoin.title,
+        status: "Completed",
+        date: "Just now"
+      });
+
+      const uIdx = users.findIndex(u => u.email === currentUser.email);
+      if (uIdx !== -1) users[uIdx] = currentUser;
+
+      saveState();
+      closeModal("modal-join");
+      showToast(`Successfully registered for ${selectedTournamentForJoin.title}!`, "success");
+
+      showAppShell();
+      switchView("my-matches");
+    }
+
+    function renderMyMatches() {
+      const container = document.getElementById("my-matches-container");
+      const myMatches = tournaments.filter(t => 
+        t.participants && t.participants.some(p => p.uid === currentUser.ffuid || p.ign === currentUser.ign)
+      );
+
+      document.getElementById("profile-matches-count").innerText = myMatches.length;
+
+      if (myMatches.length === 0) {
+        container.innerHTML = `
+          <div class="card" style="text-align: center; padding: 32px;">
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 12px;">You haven't joined any tournament matches yet.</p>
+            <button class="btn btn-primary btn-sm" onclick="switchView('lobby')">Explore Available Matches</button>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = myMatches.map(t => `
+        <div class="card" style="border-left: 4px solid var(--primary);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
+            <div>
+              <h3 style="font-size: 16px; color: #fff;">${t.title}</h3>
+              <div style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">
+                Mode: <strong>${t.mode}</strong> | Map: <strong>${t.map}</strong> | Schedule: <strong>${t.scheduleTime}</strong>
+              </div>
+            </div>
+            <span class="badge ${t.status === 'Live' ? 'badge-live' : 'badge-upcoming'}">${t.status}</span>
+          </div>
+
+          <div class="room-box">
+            <div style="font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+              <span>🔑</span> CUSTOM ROOM CREDENTIALS
+            </div>
+            <div class="room-field">
+              <span style="font-size: 13px; color: var(--text-muted);">Room ID:</span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <strong style="font-size: 16px; color: #fff; letter-spacing: 1px;">${t.roomId || 'Waiting for Admin'}</strong>
+                ${t.roomId ? `<button class="btn btn-outline btn-sm" onclick="copyText('${t.roomId}', 'Room ID Copied!')">Copy</button>` : ''}
+              </div>
+            </div>
+            <div class="room-field">
+              <span style="font-size: 13px; color: var(--text-muted);">Password:</span>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <strong style="font-size: 16px; color: var(--accent-green); letter-spacing: 1px;">${t.roomPass || 'Waiting for Admin'}</strong>
+                ${t.roomPass ? `<button class="btn btn-outline btn-sm" onclick="copyText('${t.roomPass}', 'Room Password Copied!')">Copy</button>` : ''}
+              </div>
+            </div>
+          </div>
+
+          <div style="font-size: 11px; color: var(--text-muted); margin-top: 10px;">
+            💡 Open Free Fire > Select Custom Room > Search Room ID > Enter Password and wait in your slot!
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function viewRoomCredentials(tournamentId) {
+      const match = tournaments.find(t => t.id === tournamentId);
+      if (!match) return;
+
+      document.getElementById("room-info-title").innerText = match.title;
+      document.getElementById("room-info-body").innerHTML = `
+        <div class="room-box">
+          <div class="room-field">
+            <span style="font-size: 13px; color: var(--text-muted);">Custom Room ID:</span>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <strong style="font-size: 18px; color: #fff;">${match.roomId || 'Available 15m before start'}</strong>
+              ${match.roomId ? `<button class="btn btn-primary btn-sm" onclick="copyText('${match.roomId}', 'Room ID Copied!')">Copy</button>` : ''}
+            </div>
+          </div>
+          <div class="room-field">
+            <span style="font-size: 13px; color: var(--text-muted);">Room Password:</span>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <strong style="font-size: 18px; color: var(--accent-green);">${match.roomPass || 'Available 15m before start'}</strong>
+              ${match.roomPass ? `<button class="btn btn-primary btn-sm" onclick="copyText('${match.roomPass}', 'Room Password Copied!')">Copy</button>` : ''}
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 14px; font-size: 12px; color: var(--text-muted);">
+          Match Time: <strong>${match.scheduleTime}</strong><br/>
+          Map: <strong>${match.map} (${match.mode})</strong>
+        </div>
+      `;
+      openModal("modal-room-info");
+    }
+
+    function openDepositModal() {
+      openModal("modal-deposit");
+    }
+
+    function openWithdrawModal() {
+      openModal("modal-withdraw");
+    }
+
+    function handleDepositSubmit(e) {
+      e.preventDefault();
+      const method = document.getElementById("deposit-method").value;
+      const amount = parseFloat(document.getElementById("deposit-amount").value);
+      const sender = document.getElementById("deposit-sender").value.trim();
+      const tid = document.getElementById("deposit-tid").value.trim();
+
+      const newTx = {
+        id: "DEP-" + Date.now().toString().slice(-4),
+        userEmail: currentUser.email,
+        userName: currentUser.name,
+        type: "Deposit",
+        amount,
+        method: `${method} (${sender})`,
+        tid,
+        status: "Pending",
+        date: "Just now"
+      };
+
+      transactions.unshift(newTx);
+      saveState();
+      closeModal("modal-deposit");
+      showToast("Deposit request submitted! Admin will verify and credit your balance.", "success");
+      renderWalletHistory();
+      if (currentUser.role === "admin") renderAdminDeposits();
+    }
+
+    function handleWithdrawSubmit(e) {
+      e.preventDefault();
+      const amount = parseFloat(document.getElementById("withdraw-amount").value);
+      if (currentUser.balance < amount) {
+        showToast("Insufficient balance for withdrawal!", "error");
+        return;
+      }
+
+      const method = document.getElementById("withdraw-method").value;
+      const account = document.getElementById("withdraw-account").value.trim();
+      const title = document.getElementById("withdraw-title").value.trim();
+
+      currentUser.balance -= amount;
+
+      transactions.unshift({
+        id: "WTH-" + Date.now().toString().slice(-4),
+        userEmail: currentUser.email,
+        type: "Withdrawal",
+        amount,
+        method: `${method} - ${account} (${title})`,
+        status: "Processing",
+        date: "Just now"
+      });
+
+      const uIdx = users.findIndex(u => u.email === currentUser.email);
+      if (uIdx !== -1) users[uIdx] = currentUser;
+
+      saveState();
+      closeModal("modal-withdraw");
+      showToast("Withdrawal submitted! Will be processed to your account.", "success");
+      showAppShell();
+    }
+
+    function renderWalletHistory() {
+      const tbody = document.getElementById("wallet-history-tbody");
+      const userTx = transactions.filter(t => t.userEmail === currentUser.email);
+
+      if (userTx.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: var(--text-muted);">No transactions found.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = userTx.map(t => {
+        let statusColor = "var(--text-muted)";
+        if (t.status === "Approved" || t.status === "Completed") statusColor = "var(--accent-green)";
+        if (t.status === "Pending" || t.status === "Processing") statusColor = "var(--primary)";
+        if (t.status === "Rejected") statusColor = "var(--accent-red)";
+
+        return `
+          <tr>
+            <td><strong>${t.type}</strong></td>
+            <td style="font-weight: 700; color: ${t.type === 'Deposit' || t.type === 'Bonus' ? 'var(--accent-green)' : 'var(--accent-red)'}">
+              ${t.type === 'Deposit' || t.type === 'Bonus' ? '+' : '-'} PKR ${t.amount}
+            </td>
+            <td>${t.method} ${t.tid ? `<span style="font-size: 10px; color: var(--text-muted);">TID: ${t.tid}</span>` : ''}</td>
+            <td style="color: ${statusColor}; font-weight: 600;">${t.status}</td>
+            <td style="color: var(--text-muted); font-size: 11px;">${t.date}</td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    // ADMIN MANAGEMENT & DELETE MATCH FEATURE
+    function renderAdminMatches() {
+      const tbody = document.getElementById("admin-matches-tbody");
+      if (tournaments.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">No matches in database.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = tournaments.map(t => `
+        <tr>
+          <td><strong style="color: var(--primary);">${t.id}</strong></td>
+          <td>
+            <strong>${t.title}</strong><br/>
+            <span style="font-size: 11px; color: var(--text-muted);">${t.scheduleTime}</span>
+          </td>
+          <td>${t.mode} (${t.map})</td>
+          <td>PKR ${t.entryFee} / <span style="color: var(--accent-green);">PKR ${t.prizePool}</span></td>
+          <td><strong>${t.joinedCount}</strong> / ${t.totalSlots}</td>
+          <td>
+            <span style="color: #fff;">ID: ${t.roomId || 'None'}</span><br/>
+            <span style="color: var(--accent-green); font-size: 11px;">Pass: ${t.roomPass || 'None'}</span>
+          </td>
+          <td>
+            <div style="display: flex; gap: 6px;">
+              <button class="btn btn-outline btn-sm" onclick="quickEditRoom('${t.id}')" title="Set Room ID and Password">Edit Room</button>
+              <button class="btn btn-danger btn-sm" onclick="promptDeleteMatch('${t.id}')" title="Delete Match">Delete</button>
+            </div>
+          </td>
+        </tr>
+      `).join("");
+    }
+
+    function promptDeleteMatch(tournamentId) {
+      const match = tournaments.find(t => t.id === tournamentId);
+      if (!match) return;
+
+      pendingDeleteMatchId = tournamentId;
+      document.getElementById("delete-match-name").innerText = `${match.title} (ID: ${match.id})`;
+      
+      const confirmBtn = document.getElementById("btn-confirm-delete");
+      confirmBtn.onclick = function() {
+        confirmDeleteMatch();
+      };
+
+      openModal("modal-delete-confirm");
+    }
+
+    function confirmDeleteMatch() {
+      if (!pendingDeleteMatchId) return;
+
+      const idx = tournaments.findIndex(t => t.id === pendingDeleteMatchId);
+      if (idx !== -1) {
+        const deleted = tournaments.splice(idx, 1)[0];
+        saveState();
+        closeModal("modal-delete-confirm");
+        showToast(`Match "${deleted.title}" successfully deleted!`, "success");
+        renderAdminMatches();
+        renderTournaments();
+        renderMyMatches();
+      }
+      pendingDeleteMatchId = null;
+    }
+
+    function quickEditRoom(tournamentId) {
+      const match = tournaments.find(t => t.id === tournamentId);
+      if (!match) return;
+
+      const newId = prompt("Enter Custom Room ID for " + match.title, match.roomId || "");
+      if (newId === null) return;
+      const newPass = prompt("Enter Custom Room Password", match.roomPass || "");
+      if (newPass === null) return;
+
+      match.roomId = newId.trim();
+      match.roomPass = newPass.trim();
+      saveState();
+      showToast("Room credentials updated!", "success");
+      renderAdminMatches();
+      renderTournaments();
+      renderMyMatches();
+    }
+
+    function openCreateMatchModal() {
+      openModal("modal-create-match");
+    }
+
+    function handleCreateMatchSubmit(e) {
+      e.preventDefault();
+      const title = document.getElementById("new-match-title").value.trim();
+      const mode = document.getElementById("new-match-mode").value;
+      const map = document.getElementById("new-match-map").value;
+      const fee = parseFloat(document.getElementById("new-match-fee").value) || 0;
+      const prize = parseFloat(document.getElementById("new-match-prize").value) || 0;
+      const perkill = parseFloat(document.getElementById("new-match-perkill").value) || 0;
+      const slots = parseInt(document.getElementById("new-match-slots").value) || 48;
+      const time = document.getElementById("new-match-time").value.trim();
+      const roomId = document.getElementById("new-match-roomid").value.trim();
+      const roomPass = document.getElementById("new-match-roompass").value.trim();
+      const rules = document.getElementById("new-match-rules").value.trim();
+
+      const newMatch = {
+        id: "FF-" + (100 + tournaments.length + 1),
+        title,
+        mode,
+        map,
+        entryFee: fee,
+        prizePool: prize,
+        perKill: perkill,
+        totalSlots: slots,
+        joinedCount: 0,
+        scheduleTime: time,
+        status: "Upcoming",
+        roomId,
+        roomPass,
+        rules,
+        participants: []
+      };
+
+      tournaments.unshift(newMatch);
+      saveState();
+      closeModal("modal-create-match");
+      showToast("New tournament match created successfully!", "success");
+      renderAdminMatches();
+      renderTournaments();
+    }
+
+    function renderAdminDeposits() {
+      const tbody = document.getElementById("admin-deposits-tbody");
+      const pending = transactions.filter(t => t.type === "Deposit" && t.status === "Pending");
+
+      if (pending.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--text-muted);">No pending deposit requests.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = pending.map(t => `
+        <tr>
+          <td><strong>${t.userName || t.userEmail}</strong></td>
+          <td style="color: var(--accent-green); font-weight: 700;">PKR ${t.amount}</td>
+          <td>${t.method}</td>
+          <td><strong style="color: var(--primary);">${t.tid || 'N/A'}</strong></td>
+          <td style="font-size: 11px; color: var(--text-muted);">${t.date}</td>
+          <td>
+            <div style="display: flex; gap: 6px;">
+              <button class="btn btn-success btn-sm" onclick="approveDeposit('${t.id}')">Approve</button>
+              <button class="btn btn-danger btn-sm" onclick="rejectDeposit('${t.id}')">Reject</button>
+            </div>
+          </td>
+        </tr>
+      `).join("");
+    }
+
+    function approveDeposit(txId) {
+      const tx = transactions.find(t => t.id === txId);
+      if (!tx) return;
+
+      tx.status = "Approved";
+
+      const targetUser = users.find(u => u.email === tx.userEmail);
+      if (targetUser) {
+        targetUser.balance = (targetUser.balance || 0) + tx.amount;
+        if (currentUser && currentUser.email === targetUser.email) {
+          currentUser.balance = targetUser.balance;
+        }
+      }
+
+      saveState();
+      showToast(`Deposit of PKR ${tx.amount} approved!`, "success");
+      renderAdminDeposits();
+      renderWalletHistory();
+      showAppShell();
+    }
+
+    function rejectDeposit(txId) {
+      const tx = transactions.find(t => t.id === txId);
+      if (!tx) return;
+
+      tx.status = "Rejected";
+      saveState();
+      showToast(`Deposit rejected.`, "normal");
+      renderAdminDeposits();
+      renderWalletHistory();
+    }
+
+    function renderAdminPlayers() {
+      const tbody = document.getElementById("admin-players-tbody");
+      tbody.innerHTML = users.map(u => `
+        <tr>
+          <td><strong>${u.name}</strong> ${u.role === 'admin' ? '<span class="badge badge-admin">ADMIN</span>' : ''}</td>
+          <td><strong style="color: var(--primary);">${u.ffuid || 'N/A'}</strong></td>
+          <td>${u.ign || 'N/A'}</td>
+          <td style="font-size: 11px; color: var(--text-muted);">${u.email}</td>
+          <td style="color: var(--accent-green); font-weight: 700;">PKR ${u.balance || 0}</td>
+          <td>
+            ${u.ffuid ? `<button class="btn btn-outline btn-sm" onclick="copyText('${u.ffuid}', 'Player UID Copied!')">Copy UID</button>` : '-'}
+          </td>
+        </tr>
+      `).join("");
+    }
+
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) modal.classList.add("show");
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) modal.classList.remove("show");
+    }
+
+    window.addEventListener("click", function(e) {
+      if (e.target.classList.contains("modal-backdrop")) {
+        e.target.classList.remove("show");
+      }
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      initData();
+    });
+  </script>
+</body>
+</html>
